@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		5C066B210F5684E400B63A0E /* AttitudeIndicatorLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C066B200F5684E400B63A0E /* AttitudeIndicatorLayer.mm */; };
+		5C313B720F21973D0016815C /* AirbusND.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5C313B710F21973D0016815C /* AirbusND.icns */; };
+		5C345E2E0EDA481100AFD5D9 /* VOR1Layer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C345E2D0EDA481100AFD5D9 /* VOR1Layer.mm */; };
+		5C345E350EDA4C6500AFD5D9 /* VOR2Layer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C345E340EDA4C6500AFD5D9 /* VOR2Layer.mm */; };
+		5C345EF80EDAA83D00AFD5D9 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C345EF70EDAA83D00AFD5D9 /* AppController.mm */; };
+		5C345EFC0EDAA86E00AFD5D9 /* NDModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C345EFB0EDAA86E00AFD5D9 /* NDModel.mm */; };
+		5C345EFE0EDAA87700AFD5D9 /* TestInputPanelController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C345EFD0EDAA87700AFD5D9 /* TestInputPanelController.mm */; };
+		5C345F010EDAA90600AFD5D9 /* NDView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C345F000EDAA90600AFD5D9 /* NDView.mm */; };
+		5C3508F00F127426005A6E2B /* SpeedInfoLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C3508EF0F127426005A6E2B /* SpeedInfoLayer.mm */; };
+		5C46166C13830E7100A1AF2A /* NDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C46166B13830E7100A1AF2A /* NDView.xib */; };
+		5C609DB20F0AF09F00B1BA5F /* NDInfoLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C609DB10F0AF09F00B1BA5F /* NDInfoLayer.mm */; };
+		5C62118C0EEA656900139020 /* Waypoint.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C62118B0EEA656900139020 /* Waypoint.mm */; };
+		5C64C0D50EC670BC003F122E /* TestInputPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C64C0D20EC670BC003F122E /* TestInputPanel.xib */; };
+		5C64C2E70EC7D926003F122E /* NDCompassLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C64C2E60EC7D926003F122E /* NDCompassLayer.mm */; };
+		5C6C54630F2C14230046FDF4 /* XPlaneData.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C54620F2C14230046FDF4 /* XPlaneData.c */; };
+		5C7D1D921063C79E00729EE8 /* NavRadio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D1D911063C79E00729EE8 /* NavRadio.mm */; };
+		5C89CDC50EDFD9D500089E8F /* NAVLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C89CDC40EDFD9D500089E8F /* NAVLayer.mm */; };
+		5C9EB58A0F2939E00033A506 /* UDPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AA4CB0F00390B00DD30F9 /* UDPServer.m */; };
+		5CA52F510FA7F7AC00EB0F44 /* Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA52F500FA7F7AC00EB0F44 /* Observer.m */; };
+		5CD429A80FD0A4820014451E /* DebugBreak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CD429A60FD0A4820014451E /* DebugBreak.cpp */; };
+		5CD56C1A0ECF6C7A000F237A /* ADF1Layer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56C190ECF6C7A000F237A /* ADF1Layer.mm */; };
+		5CD56C1F0ECF6D63000F237A /* ADF2Layer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56C1E0ECF6D63000F237A /* ADF2Layer.mm */; };
+		5CD56C280ECF6E00000F237A /* CompassRoseLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56C270ECF6E00000F237A /* CompassRoseLayer.mm */; };
+		5CD56C310ECF6ED3000F237A /* FixedComponentsLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56C300ECF6ED3000F237A /* FixedComponentsLayer.mm */; };
+		5CD56C380ECF6FD2000F237A /* AutopilotHeadingLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56C370ECF6FD2000F237A /* AutopilotHeadingLayer.mm */; };
+		5CD56C440ED00955000F237A /* NDUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56C430ED00955000F237A /* NDUtilities.cpp */; };
+		5CD56C620ED0B9DD000F237A /* NDLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56C610ED0B9DD000F237A /* NDLayer.mm */; };
+		5CD9F19010156CFE008E6EF3 /* NDViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9F18C10156CFE008E6EF3 /* NDViewController.mm */; };
+		5CD9F19210156CFE008E6EF3 /* PFDViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9F18F10156CFE008E6EF3 /* PFDViewController.mm */; };
+		5CF812E20F4CE744006C58A0 /* IPConfigPanelController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CF812E10F4CE744006C58A0 /* IPConfigPanelController.mm */; };
+		5CF812F20F4CEE7D006C58A0 /* IPConfigPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CF812F10F4CEE7D006C58A0 /* IPConfigPanel.xib */; };
+		5CF813770F4D4D83006C58A0 /* PFDView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CF813760F4D4D83006C58A0 /* PFDView.mm */; };
+		5CFE47950EB2BA0100402FEC /* CGColorHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE47940EB2BA0100402FEC /* CGColorHolder.m */; };
+		5CFE47BD0EB2BD0800402FEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFE47BC0EB2BD0800402FEC /* QuartzCore.framework */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* AirbusND_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirbusND_Prefix.pch; sourceTree = "<group>"; };
+		5C066B1F0F5684E400B63A0E /* AttitudeIndicatorLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttitudeIndicatorLayer.h; sourceTree = "<group>"; };
+		5C066B200F5684E400B63A0E /* AttitudeIndicatorLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AttitudeIndicatorLayer.mm; sourceTree = "<group>"; };
+		5C10C7530EB69FB40029C9DC /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		5C29D6B60EB3DFA200A945F8 /* NDModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDModel.h; sourceTree = "<group>"; };
+		5C2B60B11C07AF60003D43A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5C313B710F21973D0016815C /* AirbusND.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AirbusND.icns; sourceTree = "<group>"; };
+		5C345E2C0EDA481100AFD5D9 /* VOR1Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOR1Layer.h; sourceTree = "<group>"; };
+		5C345E2D0EDA481100AFD5D9 /* VOR1Layer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VOR1Layer.mm; sourceTree = "<group>"; };
+		5C345E330EDA4C6500AFD5D9 /* VOR2Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOR2Layer.h; sourceTree = "<group>"; };
+		5C345E340EDA4C6500AFD5D9 /* VOR2Layer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VOR2Layer.mm; sourceTree = "<group>"; };
+		5C345EF70EDAA83D00AFD5D9 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = "<group>"; };
+		5C345EFB0EDAA86E00AFD5D9 /* NDModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NDModel.mm; sourceTree = "<group>"; };
+		5C345EFD0EDAA87700AFD5D9 /* TestInputPanelController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestInputPanelController.mm; sourceTree = "<group>"; };
+		5C345F000EDAA90600AFD5D9 /* NDView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NDView.mm; sourceTree = "<group>"; };
+		5C3508EE0F127426005A6E2B /* SpeedInfoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedInfoLayer.h; sourceTree = "<group>"; };
+		5C3508EF0F127426005A6E2B /* SpeedInfoLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SpeedInfoLayer.mm; sourceTree = "<group>"; };
+		5C46166B13830E7100A1AF2A /* NDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NDView.xib; sourceTree = "<group>"; };
+		5C4AA4CA0F00390B00DD30F9 /* UDPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPServer.h; sourceTree = "<group>"; };
+		5C4AA4CB0F00390B00DD30F9 /* UDPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPServer.m; sourceTree = "<group>"; };
+		5C609DB00F0AF09F00B1BA5F /* NDInfoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDInfoLayer.h; sourceTree = "<group>"; };
+		5C609DB10F0AF09F00B1BA5F /* NDInfoLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NDInfoLayer.mm; sourceTree = "<group>"; };
+		5C62118A0EEA656900139020 /* Waypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Waypoint.h; sourceTree = "<group>"; };
+		5C62118B0EEA656900139020 /* Waypoint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Waypoint.mm; sourceTree = "<group>"; };
+		5C62118F0EEA658900139020 /* MCNavAid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNavAid.h; sourceTree = "<group>"; };
+		5C64C0D20EC670BC003F122E /* TestInputPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestInputPanel.xib; sourceTree = "<group>"; };
+		5C64C0D30EC670BC003F122E /* TestInputPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestInputPanelController.h; sourceTree = "<group>"; };
+		5C64C2E50EC7D926003F122E /* NDCompassLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDCompassLayer.h; sourceTree = "<group>"; };
+		5C64C2E60EC7D926003F122E /* NDCompassLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NDCompassLayer.mm; sourceTree = "<group>"; };
+		5C6C54610F2C14230046FDF4 /* XPlaneData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPlaneData.h; sourceTree = "<group>"; };
+		5C6C54620F2C14230046FDF4 /* XPlaneData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XPlaneData.c; sourceTree = "<group>"; };
+		5C7D1D561063A82C00729EE8 /* MCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLog.h; sourceTree = "<group>"; };
+		5C7D1D901063C79E00729EE8 /* NavRadio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavRadio.h; sourceTree = "<group>"; };
+		5C7D1D911063C79E00729EE8 /* NavRadio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NavRadio.mm; sourceTree = "<group>"; };
+		5C7D1DAE1063D65C00729EE8 /* NDViewDrawingRatios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDViewDrawingRatios.h; sourceTree = "<group>"; };
+		5C89CDC30EDFD9D500089E8F /* NAVLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVLayer.h; sourceTree = "<group>"; };
+		5C89CDC40EDFD9D500089E8F /* NAVLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NAVLayer.mm; sourceTree = "<group>"; };
+		5CA52F4F0FA7F7AC00EB0F44 /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
+		5CA52F500FA7F7AC00EB0F44 /* Observer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Observer.m; sourceTree = "<group>"; };
+		5CD429A60FD0A4820014451E /* DebugBreak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugBreak.cpp; sourceTree = "<group>"; };
+		5CD429A70FD0A4820014451E /* DebugBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugBreak.h; sourceTree = "<group>"; };
+		5CD56C180ECF6C7A000F237A /* ADF1Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADF1Layer.h; sourceTree = "<group>"; };
+		5CD56C190ECF6C7A000F237A /* ADF1Layer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADF1Layer.mm; sourceTree = "<group>"; };
+		5CD56C1D0ECF6D63000F237A /* ADF2Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADF2Layer.h; sourceTree = "<group>"; };
+		5CD56C1E0ECF6D63000F237A /* ADF2Layer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADF2Layer.mm; sourceTree = "<group>"; };
+		5CD56C260ECF6E00000F237A /* CompassRoseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompassRoseLayer.h; sourceTree = "<group>"; };
+		5CD56C270ECF6E00000F237A /* CompassRoseLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CompassRoseLayer.mm; sourceTree = "<group>"; };
+		5CD56C2F0ECF6ED3000F237A /* FixedComponentsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixedComponentsLayer.h; sourceTree = "<group>"; };
+		5CD56C300ECF6ED3000F237A /* FixedComponentsLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FixedComponentsLayer.mm; sourceTree = "<group>"; };
+		5CD56C360ECF6FD2000F237A /* AutopilotHeadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutopilotHeadingLayer.h; sourceTree = "<group>"; };
+		5CD56C370ECF6FD2000F237A /* AutopilotHeadingLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AutopilotHeadingLayer.mm; sourceTree = "<group>"; };
+		5CD56C420ED00955000F237A /* NDUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDUtilities.h; sourceTree = "<group>"; };
+		5CD56C430ED00955000F237A /* NDUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NDUtilities.cpp; sourceTree = "<group>"; };
+		5CD56C600ED0B9DD000F237A /* NDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDLayer.h; sourceTree = "<group>"; };
+		5CD56C610ED0B9DD000F237A /* NDLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NDLayer.mm; sourceTree = "<group>"; };
+		5CD9F18B10156CFE008E6EF3 /* NDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDViewController.h; sourceTree = "<group>"; };
+		5CD9F18C10156CFE008E6EF3 /* NDViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NDViewController.mm; sourceTree = "<group>"; };
+		5CD9F18E10156CFE008E6EF3 /* PFDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFDViewController.h; sourceTree = "<group>"; };
+		5CD9F18F10156CFE008E6EF3 /* PFDViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PFDViewController.mm; sourceTree = "<group>"; };
+		5CF812E00F4CE744006C58A0 /* IPConfigPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPConfigPanelController.h; sourceTree = "<group>"; };
+		5CF812E10F4CE744006C58A0 /* IPConfigPanelController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IPConfigPanelController.mm; sourceTree = "<group>"; };
+		5CF812F10F4CEE7D006C58A0 /* IPConfigPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IPConfigPanel.xib; sourceTree = "<group>"; };
+		5CF813750F4D4D83006C58A0 /* PFDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFDView.h; sourceTree = "<group>"; };
+		5CF813760F4D4D83006C58A0 /* PFDView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PFDView.mm; sourceTree = "<group>"; };
+		5CFADB7A0F54CCA2005962AF /* PFDDrawConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFDDrawConstants.h; sourceTree = "<group>"; };
+		5CFE477F0EB2B62600402FEC /* NDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDView.h; sourceTree = "<group>"; };
+		5CFE47930EB2BA0100402FEC /* CGColorHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGColorHolder.h; sourceTree = "<group>"; };
+		5CFE47940EB2BA0100402FEC /* CGColorHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGColorHolder.m; sourceTree = "<group>"; };
+		5CFE47BC0EB2BD0800402FEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* AirbusND.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbusND.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				5CFE47BD0EB2BD0800402FEC /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5CD56C180ECF6C7A000F237A /* ADF1Layer.h */,
+				5CD56C190ECF6C7A000F237A /* ADF1Layer.mm */,
+				5CD56C1D0ECF6D63000F237A /* ADF2Layer.h */,
+				5CD56C1E0ECF6D63000F237A /* ADF2Layer.mm */,
+				5C10C7530EB69FB40029C9DC /* AppController.h */,
+				5C345EF70EDAA83D00AFD5D9 /* AppController.mm */,
+				5C066B1F0F5684E400B63A0E /* AttitudeIndicatorLayer.h */,
+				5C066B200F5684E400B63A0E /* AttitudeIndicatorLayer.mm */,
+				5CD56C360ECF6FD2000F237A /* AutopilotHeadingLayer.h */,
+				5CD56C370ECF6FD2000F237A /* AutopilotHeadingLayer.mm */,
+				5CFE47930EB2BA0100402FEC /* CGColorHolder.h */,
+				5CFE47940EB2BA0100402FEC /* CGColorHolder.m */,
+				5CD56C260ECF6E00000F237A /* CompassRoseLayer.h */,
+				5CD56C270ECF6E00000F237A /* CompassRoseLayer.mm */,
+				5CD56C2F0ECF6ED3000F237A /* FixedComponentsLayer.h */,
+				5CD56C300ECF6ED3000F237A /* FixedComponentsLayer.mm */,
+				5CF812E00F4CE744006C58A0 /* IPConfigPanelController.h */,
+				5CF812E10F4CE744006C58A0 /* IPConfigPanelController.mm */,
+				5C62118F0EEA658900139020 /* MCNavAid.h */,
+				5C89CDC30EDFD9D500089E8F /* NAVLayer.h */,
+				5C89CDC40EDFD9D500089E8F /* NAVLayer.mm */,
+				5C7D1D901063C79E00729EE8 /* NavRadio.h */,
+				5C7D1D911063C79E00729EE8 /* NavRadio.mm */,
+				5C64C2E50EC7D926003F122E /* NDCompassLayer.h */,
+				5C64C2E60EC7D926003F122E /* NDCompassLayer.mm */,
+				5C609DB00F0AF09F00B1BA5F /* NDInfoLayer.h */,
+				5C609DB10F0AF09F00B1BA5F /* NDInfoLayer.mm */,
+				5CD56C600ED0B9DD000F237A /* NDLayer.h */,
+				5CD56C610ED0B9DD000F237A /* NDLayer.mm */,
+				5C29D6B60EB3DFA200A945F8 /* NDModel.h */,
+				5C345EFB0EDAA86E00AFD5D9 /* NDModel.mm */,
+				5CFE477F0EB2B62600402FEC /* NDView.h */,
+				5C345F000EDAA90600AFD5D9 /* NDView.mm */,
+				5CD9F18B10156CFE008E6EF3 /* NDViewController.h */,
+				5CD9F18C10156CFE008E6EF3 /* NDViewController.mm */,
+				5CA52F4F0FA7F7AC00EB0F44 /* Observer.h */,
+				5CA52F500FA7F7AC00EB0F44 /* Observer.m */,
+				5CF813750F4D4D83006C58A0 /* PFDView.h */,
+				5CF813760F4D4D83006C58A0 /* PFDView.mm */,
+				5CD9F18E10156CFE008E6EF3 /* PFDViewController.h */,
+				5CD9F18F10156CFE008E6EF3 /* PFDViewController.mm */,
+				5C3508EE0F127426005A6E2B /* SpeedInfoLayer.h */,
+				5C3508EF0F127426005A6E2B /* SpeedInfoLayer.mm */,
+				5C64C0D30EC670BC003F122E /* TestInputPanelController.h */,
+				5C345EFD0EDAA87700AFD5D9 /* TestInputPanelController.mm */,
+				5C4AA4CA0F00390B00DD30F9 /* UDPServer.h */,
+				5C4AA4CB0F00390B00DD30F9 /* UDPServer.m */,
+				5C345E2C0EDA481100AFD5D9 /* VOR1Layer.h */,
+				5C345E2D0EDA481100AFD5D9 /* VOR1Layer.mm */,
+				5C345E330EDA4C6500AFD5D9 /* VOR2Layer.h */,
+				5C345E340EDA4C6500AFD5D9 /* VOR2Layer.mm */,
+				5C62118A0EEA656900139020 /* Waypoint.h */,
+				5C62118B0EEA656900139020 /* Waypoint.mm */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE47BC0EB2BD0800402FEC /* QuartzCore.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* AirbusND.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* AirbusND */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+			);
+			comments = "Simulated Airbus Navigation Display";
+			name = AirbusND;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5C7D1D561063A82C00729EE8 /* MCLog.h */,
+				5CD429A60FD0A4820014451E /* DebugBreak.cpp */,
+				5CD429A70FD0A4820014451E /* DebugBreak.h */,
+				5CFADB7A0F54CCA2005962AF /* PFDDrawConstants.h */,
+				5C6C54610F2C14230046FDF4 /* XPlaneData.h */,
+				5C6C54620F2C14230046FDF4 /* XPlaneData.c */,
+				5CD56C420ED00955000F237A /* NDUtilities.h */,
+				5CD56C430ED00955000F237A /* NDUtilities.cpp */,
+				32CA4F630368D1EE00C91783 /* AirbusND_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				5C7D1DAE1063D65C00729EE8 /* NDViewDrawingRatios.h */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C313B710F21973D0016815C /* AirbusND.icns */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				5CF812F10F4CEE7D006C58A0 /* IPConfigPanel.xib */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				5C46166B13830E7100A1AF2A /* NDView.xib */,
+				5C64C0D20EC670BC003F122E /* TestInputPanel.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* AirbusND */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "AirbusND" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirbusND;
+			productInstallPath = "$(HOME)/Applications";
+			productName = AirbusND;
+			productReference = 8D1107320486CEB800E47090 /* AirbusND.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0710;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AirbusND" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				Base,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* AirbusND */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* AirbusND */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				5C64C0D50EC670BC003F122E /* TestInputPanel.xib in Resources */,
+				5C313B720F21973D0016815C /* AirbusND.icns in Resources */,
+				5CF812F20F4CEE7D006C58A0 /* IPConfigPanel.xib in Resources */,
+				5C46166C13830E7100A1AF2A /* NDView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				5CFE47950EB2BA0100402FEC /* CGColorHolder.m in Sources */,
+				5C64C2E70EC7D926003F122E /* NDCompassLayer.mm in Sources */,
+				5CD56C1A0ECF6C7A000F237A /* ADF1Layer.mm in Sources */,
+				5CD56C1F0ECF6D63000F237A /* ADF2Layer.mm in Sources */,
+				5CD56C280ECF6E00000F237A /* CompassRoseLayer.mm in Sources */,
+				5CD56C310ECF6ED3000F237A /* FixedComponentsLayer.mm in Sources */,
+				5CD56C380ECF6FD2000F237A /* AutopilotHeadingLayer.mm in Sources */,
+				5CD56C440ED00955000F237A /* NDUtilities.cpp in Sources */,
+				5CD56C620ED0B9DD000F237A /* NDLayer.mm in Sources */,
+				5C345E2E0EDA481100AFD5D9 /* VOR1Layer.mm in Sources */,
+				5C345E350EDA4C6500AFD5D9 /* VOR2Layer.mm in Sources */,
+				5C345EF80EDAA83D00AFD5D9 /* AppController.mm in Sources */,
+				5C345EFC0EDAA86E00AFD5D9 /* NDModel.mm in Sources */,
+				5C345EFE0EDAA87700AFD5D9 /* TestInputPanelController.mm in Sources */,
+				5C345F010EDAA90600AFD5D9 /* NDView.mm in Sources */,
+				5C89CDC50EDFD9D500089E8F /* NAVLayer.mm in Sources */,
+				5C62118C0EEA656900139020 /* Waypoint.mm in Sources */,
+				5C609DB20F0AF09F00B1BA5F /* NDInfoLayer.mm in Sources */,
+				5C3508F00F127426005A6E2B /* SpeedInfoLayer.mm in Sources */,
+				5C9EB58A0F2939E00033A506 /* UDPServer.m in Sources */,
+				5C6C54630F2C14230046FDF4 /* XPlaneData.c in Sources */,
+				5CF812E20F4CE744006C58A0 /* IPConfigPanelController.mm in Sources */,
+				5CF813770F4D4D83006C58A0 /* PFDView.mm in Sources */,
+				5C066B210F5684E400B63A0E /* AttitudeIndicatorLayer.mm in Sources */,
+				5CA52F510FA7F7AC00EB0F44 /* Observer.m in Sources */,
+				5CD429A80FD0A4820014451E /* DebugBreak.cpp in Sources */,
+				5CD9F19010156CFE008E6EF3 /* NDViewController.mm in Sources */,
+				5CD9F19210156CFE008E6EF3 /* PFDViewController.mm in Sources */,
+				5C7D1D921063C79E00729EE8 /* NavRadio.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2B60B11C07AF60003D43A0 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OBJC_CALL_CXX_CDTORS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AirbusND_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_SHORT_ENUMS = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = NO;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_PROTOTYPE_CONVERSION = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cdellc.${PRODUCT_NAME:identifier}";
+				PRODUCT_NAME = AirbusND;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AirbusND_Prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LLVM_LTO = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cdellc.${PRODUCT_NAME:identifier}";
+				PRODUCT_NAME = AirbusND;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "AirbusND" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AirbusND" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
