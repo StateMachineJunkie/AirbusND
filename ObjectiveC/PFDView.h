@@ -11,7 +11,7 @@
 @class CALayer;
 @class PFDViewController;
 
-@interface PFDView : NSView
+@interface PFDView : NSView <CALayerDelegate>
 {
     CGFloat circumference;
     CGFloat diameter;

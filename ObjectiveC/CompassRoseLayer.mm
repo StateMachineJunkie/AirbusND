@@ -96,6 +96,8 @@ static NSString* myContext = @"AirbusND-CompassRose-Context";
 {
     [super drawInContext:ctx];
     
+    NSDictionary* attributes = @{NSFontAttributeName:[NSFont systemFontOfSize:self.textSize]};
+    
 	CGContextSaveGState(ctx);
 	
 	// set drawing properties
@@ -133,11 +135,12 @@ static NSString* myContext = @"AirbusND-CompassRose-Context";
 				// text representing compass heading value
 				CGFloat value = i * 0.10;
 				NSString* s = [NSString stringWithFormat:@"%d", (int)value];
+#if 0
 				char const* p = [s UTF8String];
                 
                 CGContextSaveGState(ctx);
-				
-				//
+
+                //
 				// Draw invisibly first, in order to measure text output so that
 				// it may be adjusted to be centered on the tick.
 				//
@@ -155,8 +158,21 @@ static NSString* myContext = @"AirbusND-CompassRose-Context";
 				
 				CGContextSetTextDrawingMode(ctx, kCGTextFill);
                 CGContextShowTextAtPoint(ctx, -endingTextPosition.x * 0.5, -self.textSize * 0.5, p, strlen(p));
-                
+
                 CGContextRestoreGState(ctx);
+#else
+                CGContextSaveGState(ctx);
+                CGContextSetTextDrawingMode(ctx, kCGTextInvisible);
+                [[NSColor whiteColor] setFill];
+                [s drawAtPoint:NSMakePoint(0, 0) withAttributes:attributes];
+                CGPoint endingTextPosition = CGContextGetTextPosition(ctx);
+                CGContextRotateCTM(ctx, DegreesToRadians(i - 90));
+                CGContextTranslateCTM(ctx, 0.0, self.radius * 1.14);
+                CGContextScaleCTM(ctx, -1.0, 1.0);
+                CGContextSetTextDrawingMode(ctx, kCGTextFill);
+                [s drawAtPoint:NSMakePoint(endingTextPosition.x * 0.5, -self.textSize * 0.5) withAttributes:attributes];
+                CGContextRestoreGState(ctx);
+#endif
 			}
 		}
 		else

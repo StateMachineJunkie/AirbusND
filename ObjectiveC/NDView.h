@@ -20,7 +20,7 @@
 @class VOR1Layer;
 @class VOR2Layer;
 
-@interface NDView : NSView
+@interface NDView : NSView <CALayerDelegate>
 {
     CGFloat circumference;
     CGFloat diameter;

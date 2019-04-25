@@ -8,7 +8,7 @@
 
 #import "NDLayer.h"
 
-@interface NDCompassLayer : NDLayer
+@interface NDCompassLayer : NDLayer <CAAnimationDelegate>
 
 @property (nonatomic) CGFloat heading;
 
