@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="AirbusNavDisplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="YLT-hi-xAl">
+                                <rect key="frame" x="28" y="52" width="358" height="792"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mhc-Hq-XSW">
+                                        <rect key="frame" x="79" y="0.0" width="200" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sl0-Nu-TdV">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
+                                                <state key="normal" title="Mode"/>
+                                                <connections>
+                                                    <action selector="incrementMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bsG-nD-sgy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nL2-cO-mWD">
+                                                <rect key="frame" x="52" y="0.0" width="44" height="30"/>
+                                                <state key="normal" title="NAV 1"/>
+                                                <connections>
+                                                    <action selector="incrementNav1Source:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l5v-sB-vDU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e67-K6-frg">
+                                                <rect key="frame" x="104" y="0.0" width="44" height="30"/>
+                                                <state key="normal" title="NAV 2"/>
+                                                <connections>
+                                                    <action selector="incrementNav2Source:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qsX-zV-Smk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUZ-gg-agg">
+                                                <rect key="frame" x="156" y="0.0" width="44" height="30"/>
+                                                <state key="normal" title="Range"/>
+                                                <connections>
+                                                    <action selector="incrementRange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vX2-ml-I7Q"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="ya2-Nz-Jgy">
+                                        <rect key="frame" x="0.0" y="34" width="358" height="358"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ya2-Nz-Jgy" secondAttribute="height" multiplier="1:1" id="heo-3F-G8z"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="lZy-he-eDJ" kind="embed" identifier="embedNDView" id="UaG-fG-mhT"/>
+                                        </connections>
+                                    </containerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHS-i3-U2M">
+                                        <rect key="frame" x="148.5" y="396" width="61" height="396"/>
+                                        <state key="normal" title="Start BIT"/>
+                                        <connections>
+                                            <action selector="startBIT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XX6-Wa-BcS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="YLT-hi-xAl" secondAttribute="trailing" priority="999" constant="8" id="9ru-3b-R7q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YLT-hi-xAl" secondAttribute="bottom" priority="999" constant="8" id="FWH-aL-ClG"/>
+                            <constraint firstItem="YLT-hi-xAl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Giu-1F-zEV"/>
+                            <constraint firstItem="YLT-hi-xAl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" priority="999" constant="8" id="Jeq-di-z9s"/>
+                            <constraint firstItem="YLT-hi-xAl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LN5-o8-U9Q"/>
+                            <constraint firstItem="YLT-hi-xAl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" priority="999" constant="8" id="YGO-Kj-Nyv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="modeButton" destination="sl0-Nu-TdV" id="vOj-oG-dKl"/>
+                        <outlet property="nav1Button" destination="nL2-cO-mWD" id="0EP-rm-efM"/>
+                        <outlet property="nav2Button" destination="e67-K6-frg" id="hOs-z8-fau"/>
+                        <outlet property="rangeButton" destination="lUZ-gg-agg" id="O76-jl-pOY"/>
+                        <outlet property="startBITButton" destination="yHS-i3-U2M" id="Ayv-Ty-ISQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821" y="610"/>
+        </scene>
+        <!--NDView Controller-->
+        <scene sceneID="agX-xE-xwY">
+            <objects>
+                <viewController id="lZy-he-eDJ" userLabel="NDView Controller" customClass="NDViewController" customModule="AirbusNavDisplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aWt-aL-apj"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fik-nL-lWi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rg7-zm-P0h" userLabel="NDView" customClass="NDView" customModule="AirbusNavDisplay" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="358"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="ADF1Enabled" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="ADF2Enabled" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="ADF1Heading">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="ADF2Heading">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="autopilotHeadingEnabled" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="autopilotHeading">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="compassHeading">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="radioNAVCourse">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="radioNAVCourseDeviation">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="radioNAVGlideSlopeDeviation">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="range">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="VOR1Heading">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="VOR1Enabled" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="VOR2Enabled" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OnQ-5j-R8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1573" y="610"/>
+        </scene>
+    </scenes>
+</document>

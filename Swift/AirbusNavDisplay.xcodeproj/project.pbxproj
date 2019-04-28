@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1058B0D94D75717D82411FCF /* Pods_AirbusNavDisplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0AE258E977892FCEE12290 /* Pods_AirbusNavDisplay.framework */; };
+		5C2B60E21C07DDAA003D43A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B60E11C07DDAA003D43A0 /* AppDelegate.swift */; };
+		5C2B60E71C07DDAA003D43A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2B60E51C07DDAA003D43A0 /* Main.storyboard */; };
+		5C2B60E91C07DDAA003D43A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C2B60E81C07DDAA003D43A0 /* Assets.xcassets */; };
+		5C2B60EC1C07DDAA003D43A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2B60EA1C07DDAA003D43A0 /* LaunchScreen.storyboard */; };
+		5C2B60F41C07DF9D003D43A0 /* NDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B60F31C07DF9D003D43A0 /* NDView.swift */; };
+		5C2B60F81C0984FF003D43A0 /* CompassRoseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B60F71C0984FF003D43A0 /* CompassRoseLayer.swift */; };
+		5C30C4921C1E707000D9A8F7 /* ADF1Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30C4901C1E707000D9A8F7 /* ADF1Layer.swift */; };
+		5C30C4931C1E707000D9A8F7 /* AutopilotHeadingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30C4911C1E707000D9A8F7 /* AutopilotHeadingLayer.swift */; };
+		5C30C4951C1E718100D9A8F7 /* ADF2Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30C4941C1E718100D9A8F7 /* ADF2Layer.swift */; };
+		5C3BC6051C2A5FF700D107D7 /* EFISControlUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BC6041C2A5FF700D107D7 /* EFISControlUnit.swift */; };
+		5C552F271C1BE3DC00FAE1FC /* NDLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B60F51C09761D003D43A0 /* NDLayer.swift */; };
+		5C552F291C1BE61500FAE1FC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C552F281C1BE61500FAE1FC /* RootViewController.swift */; };
+		5C552F2B1C1BE8D000FAE1FC /* NDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C552F2A1C1BE8D000FAE1FC /* NDViewController.swift */; };
+		5CC9DB4E1E10AABF00CEC696 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9DB4D1E10AABF00CEC696 /* Angle.swift */; };
+		5CE188EF1C2C9489003A9272 /* CGAffineTransformExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE188EE1C2C9489003A9272 /* CGAffineTransformExtension.swift */; };
+		5CFCD0FB1C1FD4E60023C656 /* VOR1Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCD0F91C1FD4E60023C656 /* VOR1Layer.swift */; };
+		5CFCD0FC1C1FD4E60023C656 /* VOR2Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCD0FA1C1FD4E60023C656 /* VOR2Layer.swift */; };
+		5CFCD0FE1C2271E60023C656 /* FixedComponentsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCD0FD1C2271E60023C656 /* FixedComponentsLayer.swift */; };
+		5CFCD1001C2675760023C656 /* NavLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCD0FF1C2675760023C656 /* NavLayer.swift */; };
+		5CFCD1021C27745D0023C656 /* AircraftDatumLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCD1011C27745D0023C656 /* AircraftDatumLayer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5C2B60DE1C07DDAA003D43A0 /* AirbusNavDisplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbusNavDisplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C2B60E11C07DDAA003D43A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C2B60E61C07DDAA003D43A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C2B60E81C07DDAA003D43A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C2B60EB1C07DDAA003D43A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C2B60ED1C07DDAA003D43A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C2B60F31C07DF9D003D43A0 /* NDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDView.swift; sourceTree = "<group>"; };
+		5C2B60F51C09761D003D43A0 /* NDLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDLayer.swift; sourceTree = "<group>"; };
+		5C2B60F71C0984FF003D43A0 /* CompassRoseLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassRoseLayer.swift; sourceTree = "<group>"; };
+		5C30C4901C1E707000D9A8F7 /* ADF1Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADF1Layer.swift; sourceTree = "<group>"; };
+		5C30C4911C1E707000D9A8F7 /* AutopilotHeadingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutopilotHeadingLayer.swift; sourceTree = "<group>"; };
+		5C30C4941C1E718100D9A8F7 /* ADF2Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADF2Layer.swift; sourceTree = "<group>"; };
+		5C3BC6041C2A5FF700D107D7 /* EFISControlUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFISControlUnit.swift; sourceTree = "<group>"; };
+		5C552F281C1BE61500FAE1FC /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		5C552F2A1C1BE8D000FAE1FC /* NDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDViewController.swift; sourceTree = "<group>"; };
+		5C84F7051C2E1C15006131B6 /* UDPCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPCode.m; sourceTree = "<group>"; };
+		5C88CBBE1C2CACFC0025B8F8 /* AirbusNavDisplay-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AirbusNavDisplay-Bridging-Header.h"; sourceTree = "<group>"; };
+		5CC9DB4D1E10AABF00CEC696 /* Angle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
+		5CE188EE1C2C9489003A9272 /* CGAffineTransformExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGAffineTransformExtension.swift; sourceTree = "<group>"; };
+		5CFCD0F91C1FD4E60023C656 /* VOR1Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOR1Layer.swift; sourceTree = "<group>"; };
+		5CFCD0FA1C1FD4E60023C656 /* VOR2Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOR2Layer.swift; sourceTree = "<group>"; };
+		5CFCD0FD1C2271E60023C656 /* FixedComponentsLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedComponentsLayer.swift; sourceTree = "<group>"; };
+		5CFCD0FF1C2675760023C656 /* NavLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavLayer.swift; sourceTree = "<group>"; };
+		5CFCD1011C27745D0023C656 /* AircraftDatumLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AircraftDatumLayer.swift; sourceTree = "<group>"; };
+		BE0AE258E977892FCEE12290 /* Pods_AirbusNavDisplay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbusNavDisplay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF59202656607443136C36CB /* Pods-AirbusNavDisplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbusNavDisplay.debug.xcconfig"; path = "Target Support Files/Pods-AirbusNavDisplay/Pods-AirbusNavDisplay.debug.xcconfig"; sourceTree = "<group>"; };
+		D9E030D1039585FEB296AFD4 /* Pods-AirbusNavDisplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbusNavDisplay.release.xcconfig"; path = "Target Support Files/Pods-AirbusNavDisplay/Pods-AirbusNavDisplay.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C2B60DB1C07DDAA003D43A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1058B0D94D75717D82411FCF /* Pods_AirbusNavDisplay.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02C46E36349845CF645B43E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF59202656607443136C36CB /* Pods-AirbusNavDisplay.debug.xcconfig */,
+				D9E030D1039585FEB296AFD4 /* Pods-AirbusNavDisplay.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5C2B60D51C07DDAA003D43A0 = {
+			isa = PBXGroup;
+			children = (
+				5C2B60E01C07DDAA003D43A0 /* AirbusNavDisplay */,
+				5C2B60DF1C07DDAA003D43A0 /* Products */,
+				BDFF5A8228BD5F79E0887FEF /* Frameworks */,
+				02C46E36349845CF645B43E1 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		5C2B60DF1C07DDAA003D43A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C2B60DE1C07DDAA003D43A0 /* AirbusNavDisplay.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C2B60E01C07DDAA003D43A0 /* AirbusNavDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				5C88CBBE1C2CACFC0025B8F8 /* AirbusNavDisplay-Bridging-Header.h */,
+				5C2B60E11C07DDAA003D43A0 /* AppDelegate.swift */,
+				5C2B60E81C07DDAA003D43A0 /* Assets.xcassets */,
+				5C88CBBA1C2CA44F0025B8F8 /* Extensions */,
+				5C2B60ED1C07DDAA003D43A0 /* Info.plist */,
+				5C2B60EA1C07DDAA003D43A0 /* LaunchScreen.storyboard */,
+				5C3BC6031C2A5F6100D107D7 /* Layers */,
+				5C2B60E51C07DDAA003D43A0 /* Main.storyboard */,
+				5C3BC6011C2A5F3700D107D7 /* Models */,
+				5CC9DB4C1E10AA8E00CEC696 /* Utility */,
+				5C3BC6021C2A5F4700D107D7 /* Views */,
+			);
+			path = AirbusNavDisplay;
+			sourceTree = "<group>";
+		};
+		5C3BC6011C2A5F3700D107D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C3BC6041C2A5FF700D107D7 /* EFISControlUnit.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5C3BC6021C2A5F4700D107D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C2B60F31C07DF9D003D43A0 /* NDView.swift */,
+				5C552F2A1C1BE8D000FAE1FC /* NDViewController.swift */,
+				5C552F281C1BE61500FAE1FC /* RootViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5C3BC6031C2A5F6100D107D7 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				5C30C4901C1E707000D9A8F7 /* ADF1Layer.swift */,
+				5C30C4941C1E718100D9A8F7 /* ADF2Layer.swift */,
+				5CFCD1011C27745D0023C656 /* AircraftDatumLayer.swift */,
+				5C30C4911C1E707000D9A8F7 /* AutopilotHeadingLayer.swift */,
+				5C2B60F71C0984FF003D43A0 /* CompassRoseLayer.swift */,
+				5CFCD0FD1C2271E60023C656 /* FixedComponentsLayer.swift */,
+				5CFCD0FF1C2675760023C656 /* NavLayer.swift */,
+				5C2B60F51C09761D003D43A0 /* NDLayer.swift */,
+				5CFCD0F91C1FD4E60023C656 /* VOR1Layer.swift */,
+				5CFCD0FA1C1FD4E60023C656 /* VOR2Layer.swift */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
+		5C88CBBA1C2CA44F0025B8F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5CE188EE1C2C9489003A9272 /* CGAffineTransformExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		5CC9DB4C1E10AA8E00CEC696 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5CC9DB4D1E10AABF00CEC696 /* Angle.swift */,
+				5C84F7051C2E1C15006131B6 /* UDPCode.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		BDFF5A8228BD5F79E0887FEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE0AE258E977892FCEE12290 /* Pods_AirbusNavDisplay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C2B60DD1C07DDAA003D43A0 /* AirbusNavDisplay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C2B60F01C07DDAA003D43A0 /* Build configuration list for PBXNativeTarget "AirbusNavDisplay" */;
+			buildPhases = (
+				261485B286473EF78D0D8934 /* [CP] Check Pods Manifest.lock */,
+				5C2B60DA1C07DDAA003D43A0 /* Sources */,
+				5C2B60DB1C07DDAA003D43A0 /* Frameworks */,
+				5C2B60DC1C07DDAA003D43A0 /* Resources */,
+				49D308F6831D752C09CD7899 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirbusNavDisplay;
+			productName = AirbusNavDisplay;
+			productReference = 5C2B60DE1C07DDAA003D43A0 /* AirbusNavDisplay.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C2B60D61C07DDAA003D43A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Crawford Design Engineering, LLC";
+				TargetAttributes = {
+					5C2B60DD1C07DDAA003D43A0 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 4887CWSKD9;
+						LastSwiftMigration = 0820;
+					};
+				};
+			};
+			buildConfigurationList = 5C2B60D91C07DDAA003D43A0 /* Build configuration list for PBXProject "AirbusNavDisplay" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C2B60D51C07DDAA003D43A0;
+			productRefGroup = 5C2B60DF1C07DDAA003D43A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C2B60DD1C07DDAA003D43A0 /* AirbusNavDisplay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C2B60DC1C07DDAA003D43A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C2B60EC1C07DDAA003D43A0 /* LaunchScreen.storyboard in Resources */,
+				5C2B60E91C07DDAA003D43A0 /* Assets.xcassets in Resources */,
+				5C2B60E71C07DDAA003D43A0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		261485B286473EF78D0D8934 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirbusNavDisplay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49D308F6831D752C09CD7899 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AirbusNavDisplay/Pods-AirbusNavDisplay-frameworks.sh",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-21/iOS/RevealServer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AirbusNavDisplay/Pods-AirbusNavDisplay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C2B60DA1C07DDAA003D43A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C552F291C1BE61500FAE1FC /* RootViewController.swift in Sources */,
+				5C3BC6051C2A5FF700D107D7 /* EFISControlUnit.swift in Sources */,
+				5C2B60F81C0984FF003D43A0 /* CompassRoseLayer.swift in Sources */,
+				5C552F271C1BE3DC00FAE1FC /* NDLayer.swift in Sources */,
+				5CFCD1021C27745D0023C656 /* AircraftDatumLayer.swift in Sources */,
+				5CFCD0FB1C1FD4E60023C656 /* VOR1Layer.swift in Sources */,
+				5C30C4921C1E707000D9A8F7 /* ADF1Layer.swift in Sources */,
+				5C30C4951C1E718100D9A8F7 /* ADF2Layer.swift in Sources */,
+				5CFCD0FC1C1FD4E60023C656 /* VOR2Layer.swift in Sources */,
+				5C30C4931C1E707000D9A8F7 /* AutopilotHeadingLayer.swift in Sources */,
+				5CFCD0FE1C2271E60023C656 /* FixedComponentsLayer.swift in Sources */,
+				5C2B60E21C07DDAA003D43A0 /* AppDelegate.swift in Sources */,
+				5CC9DB4E1E10AABF00CEC696 /* Angle.swift in Sources */,
+				5C552F2B1C1BE8D000FAE1FC /* NDViewController.swift in Sources */,
+				5C2B60F41C07DF9D003D43A0 /* NDView.swift in Sources */,
+				5CE188EF1C2C9489003A9272 /* CGAffineTransformExtension.swift in Sources */,
+				5CFCD1001C2675760023C656 /* NavLayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5C2B60E51C07DDAA003D43A0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2B60E61C07DDAA003D43A0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C2B60EA1C07DDAA003D43A0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2B60EB1C07DDAA003D43A0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C2B60EE1C07DDAA003D43A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C2B60EF1C07DDAA003D43A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C2B60F11C07DDAA003D43A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF59202656607443136C36CB /* Pods-AirbusNavDisplay.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = AirbusNavDisplay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cdellc.AirbusNavDisplay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AirbusNavDisplay/AirbusNavDisplay-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C2B60F21C07DDAA003D43A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9E030D1039585FEB296AFD4 /* Pods-AirbusNavDisplay.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = AirbusNavDisplay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cdellc.AirbusNavDisplay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AirbusNavDisplay/AirbusNavDisplay-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C2B60D91C07DDAA003D43A0 /* Build configuration list for PBXProject "AirbusNavDisplay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2B60EE1C07DDAA003D43A0 /* Debug */,
+				5C2B60EF1C07DDAA003D43A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C2B60F01C07DDAA003D43A0 /* Build configuration list for PBXNativeTarget "AirbusNavDisplay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2B60F11C07DDAA003D43A0 /* Debug */,
+				5C2B60F21C07DDAA003D43A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C2B60D61C07DDAA003D43A0 /* Project object */;
+}

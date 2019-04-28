@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		5C066B210F5684E400B63A0E /* AttitudeIndicatorLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C066B200F5684E400B63A0E /* AttitudeIndicatorLayer.mm */; };
+		5C0DF4AE22756CD2009DFE3B /* Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA52F500FA7F7AC00EB0F44 /* Observer.m */; };
 		5C313B720F21973D0016815C /* AirbusND.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5C313B710F21973D0016815C /* AirbusND.icns */; };
 		5C345E2E0EDA481100AFD5D9 /* VOR1Layer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C345E2D0EDA481100AFD5D9 /* VOR1Layer.mm */; };
 		5C345E350EDA4C6500AFD5D9 /* VOR2Layer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C345E340EDA4C6500AFD5D9 /* VOR2Layer.mm */; };
@@ -26,7 +27,6 @@
 		5C7D1D921063C79E00729EE8 /* NavRadio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D1D911063C79E00729EE8 /* NavRadio.mm */; };
 		5C89CDC50EDFD9D500089E8F /* NAVLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C89CDC40EDFD9D500089E8F /* NAVLayer.mm */; };
 		5C9EB58A0F2939E00033A506 /* UDPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AA4CB0F00390B00DD30F9 /* UDPServer.m */; };
-		5CA52F510FA7F7AC00EB0F44 /* Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA52F500FA7F7AC00EB0F44 /* Observer.m */; };
 		5CD429A80FD0A4820014451E /* DebugBreak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CD429A60FD0A4820014451E /* DebugBreak.cpp */; };
 		5CD56C1A0ECF6C7A000F237A /* ADF1Layer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56C190ECF6C7A000F237A /* ADF1Layer.mm */; };
 		5CD56C1F0ECF6D63000F237A /* ADF2Layer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56C1E0ECF6D63000F237A /* ADF2Layer.mm */; };
@@ -370,9 +370,9 @@
 				5CF812E20F4CE744006C58A0 /* IPConfigPanelController.mm in Sources */,
 				5CF813770F4D4D83006C58A0 /* PFDView.mm in Sources */,
 				5C066B210F5684E400B63A0E /* AttitudeIndicatorLayer.mm in Sources */,
-				5CA52F510FA7F7AC00EB0F44 /* Observer.m in Sources */,
 				5CD429A80FD0A4820014451E /* DebugBreak.cpp in Sources */,
 				5CD9F19010156CFE008E6EF3 /* NDViewController.mm in Sources */,
+				5C0DF4AE22756CD2009DFE3B /* Observer.m in Sources */,
 				5CD9F19210156CFE008E6EF3 /* PFDViewController.mm in Sources */,
 				5C7D1D921063C79E00729EE8 /* NavRadio.mm in Sources */,
 			);
