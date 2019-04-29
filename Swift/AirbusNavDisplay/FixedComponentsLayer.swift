@@ -137,6 +137,7 @@ class FixedComponentsLayer: NDLayer {
             
             ctx.drawPath(using: .stroke)
             
+            // Draw center glide path marker
             ctx.beginPath()
             ctx.setStrokeColor(UIColor.yellow.cgColor)
             ctx.setLineWidth(2.0)
@@ -146,6 +147,7 @@ class FixedComponentsLayer: NDLayer {
             
             ctx.drawPath(using: .stroke)
             
+            // Draw glide path deviation rhombus / carret (half rhombus)
             ctx.setStrokeColor(UIColor.magenta.cgColor)
             
             var gsdOffsetY: CGFloat = 0;
@@ -156,7 +158,7 @@ class FixedComponentsLayer: NDLayer {
                 
                 
                 // draw up-carret
-                self.drawCarretAtPoint(CGPoint(x: gsdOffsetX - (gsdMarkRadius * 2.0), y: gsdOffsetY),
+                self.drawCarretAtPoint(CGPoint(x: gsdOffsetX + (2.0) - (gsdMarkRadius * 2.0), y: gsdOffsetY),
                     inContext: ctx,
                     withRadius: gsdMarkRadius * 2.0,
                     andUpOrientation: true)
@@ -166,14 +168,14 @@ class FixedComponentsLayer: NDLayer {
                 
                 
                 // draw down-carret
-                self.drawCarretAtPoint(CGPoint(x: gsdOffsetX - (gsdMarkRadius * 2.0), y: gsdOffsetY),
+                self.drawCarretAtPoint(CGPoint(x: gsdOffsetX + (2.0) - (gsdMarkRadius * 2.0), y: gsdOffsetY),
                     inContext: ctx,
                     withRadius: gsdMarkRadius * 2.0,
                     andUpOrientation: false)
             } else {
                 gsdOffsetY = self.radius * self.glideSlopeDeviation * kGlideSlopeDeviationRatio;
                 
-                self.drawRhombusAtPoint(CGPoint(x: gsdOffsetX - (gsdMarkRadius * 2.0), y: gsdOffsetY),
+                self.drawRhombusAtPoint(CGPoint(x: gsdOffsetX + (2.0) - (gsdMarkRadius * 2.0), y: gsdOffsetY),
                     inContext: ctx,
                     withAngle: 0.0,
                     andRadius: gsdMarkRadius * 2.0,

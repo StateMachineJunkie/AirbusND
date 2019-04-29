@@ -50,7 +50,8 @@ class CompassRoseLayer: NDLayer {
 
         // draw initial circle
         ctx.beginPath()
-		ctx.addArc(center: CGPoint(x: 0, y: 0), radius: self.radius, startAngle: Angle.min.radians, endAngle: Angle.max.radians, clockwise: false)
+        let maxDrawAngle = Angle.maxDegrees + 1.0
+		ctx.addArc(center: CGPoint(x: 0, y: 0), radius: self.radius, startAngle: Angle.min.radians, endAngle: maxDrawAngle.radians, clockwise: false)
         
         // draw ticks around circle at five degree increments
 		for angle in stride(from: Angle.min.degrees, to: Angle.max.degrees, by: 5.0) {
