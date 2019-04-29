@@ -1,5 +1,7 @@
 #AirbusND -- Airbus Navigation Display / Simulator
+
 This code simulates the output of an Airbus A320 navigation display.
+
 ##Introduction
 
 I originally wrote this code while on vacation in Hawaii. Besides enjoying the sun and the beach I also wanted spend some time working on something related to my hobby, which is flight simulation. In any case, I had some images of an Airbus 320 navigation display. I though it would be cool to hookup X-Plane 9 to an external iPad or Mac controlled display and see a closeup of some of the instrumentation.
