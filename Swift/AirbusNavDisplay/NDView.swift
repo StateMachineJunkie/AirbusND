@@ -15,9 +15,9 @@ import UIKit
 
 typealias BITCompletion = (Bool) -> Void
 
-@IBDesignable open class NDView: UIView {
+@IBDesignable class NDView: UIView {
     
-    open var disableAnimations = false
+    var disableAnimations = false
     
     @objc public enum RadioNAVSource: Int {
         case off
@@ -43,7 +43,7 @@ typealias BITCompletion = (Bool) -> Void
     fileprivate var layoutBounds: CGRect = CGRect.zero
     
     // MARK: - Properties
-    @IBInspectable open var ADF1Enabled: Bool {
+    @IBInspectable var ADF1Enabled: Bool {
         get {
             return !adf1Layer.isHidden
         }
@@ -52,7 +52,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var ADF1Heading: CGFloat {
+    @IBInspectable var ADF1Heading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: adf1Layer.transform).rotationAngle).degrees
             if heading < 0 {
@@ -67,7 +67,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var ADF2Enabled: Bool {
+    @IBInspectable var ADF2Enabled: Bool {
         get {
             return !adf2Layer.isHidden
         }
@@ -76,7 +76,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var ADF2Heading: CGFloat {
+    @IBInspectable var ADF2Heading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: adf2Layer.transform).rotationAngle).degrees
             if heading < 0 {
@@ -91,7 +91,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var autopilotHeading: CGFloat {
+    @IBInspectable var autopilotHeading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: autopilotHeadingLayer.transform).rotationAngle).degrees
             if heading < 0 {
@@ -106,7 +106,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var autopilotHeadingEnabled: Bool {
+    @IBInspectable var autopilotHeadingEnabled: Bool {
         get {
             return !autopilotHeadingLayer.isHidden
         }
@@ -115,7 +115,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var compassHeading: CGFloat {
+    @IBInspectable var compassHeading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: compassLayer.transform).rotationAngle).degrees
             if heading < 0 {
@@ -130,7 +130,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var radioNAVCourse: CGFloat {
+    @IBInspectable var radioNAVCourse: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: navLayer.transform).rotationAngle).degrees
             if heading < 0 {
@@ -145,7 +145,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var radioNAVCourseDeviation: CGFloat {
+    @IBInspectable var radioNAVCourseDeviation: CGFloat {
         get {
             return navLayer.courseDeviation
         }
@@ -154,7 +154,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var radioNAVGlideSlopeDeviation: CGFloat {
+    @IBInspectable var radioNAVGlideSlopeDeviation: CGFloat {
         get {
             return fixedComponentsLayer.glideSlopeDeviation
         }
@@ -163,7 +163,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var radioNAVSource: RadioNAVSource {
+    @IBInspectable var radioNAVSource: RadioNAVSource {
         get {
             if navLayer.isHidden {
                 return .off
@@ -193,7 +193,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var range: Int {
+    @IBInspectable var range: Int {
         get {
             return fixedComponentsLayer.range
         }
@@ -202,7 +202,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var VOR1Enabled: Bool {
+    @IBInspectable var VOR1Enabled: Bool {
         get {
             return !vor1Layer.isHidden
         }
@@ -211,7 +211,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var VOR1Heading: CGFloat {
+    @IBInspectable var VOR1Heading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: vor1Layer.transform).rotationAngle).degrees
             if heading < 0 {
@@ -226,7 +226,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
 
-    @IBInspectable open var VOR2Enabled: Bool {
+    @IBInspectable var VOR2Enabled: Bool {
         get {
             return !vor2Layer.isHidden
         }
@@ -235,7 +235,7 @@ typealias BITCompletion = (Bool) -> Void
         }
     }
     
-    @IBInspectable open var VOR2Heading: CGFloat {
+    @IBInspectable var VOR2Heading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: vor2Layer.transform).rotationAngle).degrees
             if heading < 0 {
@@ -254,6 +254,7 @@ typealias BITCompletion = (Bool) -> Void
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.backgroundColor = UIColor.black.cgColor
+        self.layer.delegate = self
         
         // Create component layers
         adf1Layer = ADF1Layer()
@@ -266,6 +267,17 @@ typealias BITCompletion = (Bool) -> Void
         vor1Layer = VOR1Layer()
         vor2Layer = VOR2Layer()
         
+        // Configure component layers
+        adf1Layer.name = "ADF1"
+        adf2Layer.name = "ADF2"
+        aircraftDatumLayer.name = "AC Datum"
+        autopilotHeadingLayer.name = "AP Heading"
+        compassLayer.name = "Compass Rose"
+        fixedComponentsLayer.name = "Fixed Components"
+        navLayer.name = "Nav"
+        vor1Layer.name = "VOR1"
+        vor2Layer.name = "VOR2"
+
         // The ADf, NAV, and VOR layers should move relative to the compass-rose
         self.compassLayer.sublayers = [
             adf1Layer,
@@ -296,14 +308,8 @@ typealias BITCompletion = (Bool) -> Void
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - UIView Overrides
-//    override open func didMoveToWindow() {
-//        setNeedsDisplay()
-//        setNeedsLayout()
-//    }
-    
     // MARK: - CALayer Delegate Methods
-    func layoutSublayersOfLayer(_ layer: CALayer) {
+    override func layoutSublayers(of layer: CALayer) {
         // Update sublayer frames based on new view size but only if the view
         // size has changed since the last layout request. Since we receive
         // layout requests for other reasons than a resize event, this is an
@@ -341,7 +347,7 @@ typealias BITCompletion = (Bool) -> Void
     }
     
     // MARK: - Public Methods
-    open func startBIT(_ completion: @escaping (_ finished: Bool) -> Void) {
+    func startBIT(_ completion: @escaping (_ finished: Bool) -> Void) {
         if bitInProgress {
             completion(false)
             return

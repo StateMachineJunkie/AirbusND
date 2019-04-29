@@ -9,10 +9,6 @@
 //import Darwin
 import UIKit
 
-extension FloatingPoint {
-    
-}
-
 public extension Double {
     var degrees: Double { return self * 180.0 / .pi }
     var radians: Double { return self * .pi / 180.0 }
@@ -59,7 +55,7 @@ public extension CGFloat {
     
 }
 
-//postfix operator ° {}
+//postfix operator °
 //postfix func ˚(degrees: Double) -> Double { return degrees.radians }
 
 func pointOnCircumferenceWithAngle(_ angle: CGFloat, radius: CGFloat) -> CGPoint {

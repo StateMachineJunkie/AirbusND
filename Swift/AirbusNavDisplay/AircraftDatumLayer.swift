@@ -31,7 +31,7 @@ class AircraftDatumLayer: NDLayer {
         ctx.addLine(to: CGPoint(x: -(self.radius * 0.05), y: (self.radius * 0.15)))
         
         // Draw nose indicator
-        ctx.move(to: CGPoint(x: 0.0, y: -self.radius * 1.12))
+        ctx.move(to: CGPoint(x: 0.0, y: -self.radius * 1.05))
         ctx.addLine(to: CGPoint(x: 0.0, y: -self.radius * 0.95))
         
         // Commit drawing

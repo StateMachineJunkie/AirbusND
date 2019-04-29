@@ -22,9 +22,11 @@ class NDViewController: UIViewController {
         super.init(coder: decoder)
         
         // Debug
+        #if false
         let ndView = self.view as! NDView
         ndView.ADF1Enabled = true
         debugTimer = Timer.scheduledTimer(timeInterval: 0.33, target: self, selector: #selector(NDViewController.debugTick), userInfo: nil, repeats: true)
+        #endif
     }
     
     // MARK: - View Lifecycle Methods
