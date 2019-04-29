@@ -10,8 +10,8 @@ import UIKit
 
 class NDViewController: UIViewController {
 
-    let ECU: EFISControlUnit = EFISControlUnit()
-    var debugTimer: Timer?
+    private var debugTimer: Timer?
+    private let ECU: EFISControlUnit = EFISControlUnit()
     
     // MARK: - Initialization
     override init(nibName: String?, bundle nibBundle: Bundle?) {
@@ -25,7 +25,7 @@ class NDViewController: UIViewController {
         #if false
         let ndView = self.view as! NDView
         ndView.ADF1Enabled = true
-        debugTimer = Timer.scheduledTimer(timeInterval: 0.33, target: self, selector: #selector(NDViewController.debugTick), userInfo: nil, repeats: true)
+        debugTimer = Timer.scheduledTimer(timeInterval: 0.033, target: self, selector: #selector(NDViewController.debugTick), userInfo: nil, repeats: true)
         #endif
     }
     
@@ -34,52 +34,67 @@ class NDViewController: UIViewController {
         self.view = NDView()
     }
     
-    // MARK: - KVO Handlers
-    @objc func rangeChanged() {
-        if let view = self.view as? NDView {
-            view.range = ECU.range.rawValue
-        }
-    }
-    
     // MARK: - Public Methods
     func incrementMode() {
+        guard let ndView = self.view as? NDView else { return }
+        
         switch ( ECU.mode ) {
         case .arc:
-            ECU.mode = .plan
-        case .plan:
-            ECU.mode = .rose(submode: .ils)
-        case .rose(submode: .ils):
-            ECU.mode = .rose(submode: .vor)
-        case .rose(submode: .vor):
-            ECU.mode = .rose(submode: .nav)
-        case .rose(submode: .nav):
+            ECU.mode = .roseILS
+            ndView.radioNAVSource = .ils
+        case .roseILS:
+            ECU.mode = .roseVOR
+            ndView.radioNAVSource = .vor
+        case .roseVOR:
+            ECU.mode = .roseNAV
+            ndView.radioNAVSource = .off
+        case .roseNAV:
             ECU.mode = .arc
+            ndView.radioNAVSource = .off
         }
     }
     
     func incrementNav1Source() {
+        guard let ndView = self.view as? NDView else { return }
+        
         switch ( ECU.navaid1Source ) {
         case .adf:
             ECU.navaid1Source = .vor
+            ndView.ADF1Enabled = false
+            ndView.VOR1Enabled = true
         case .off:
             ECU.navaid1Source = .adf
+            ndView.ADF1Enabled = true
+            ndView.VOR1Enabled = false
         case .vor:
             ECU.navaid1Source = .off
+            ndView.ADF1Enabled = false
+            ndView.VOR1Enabled = false
         }
     }
     
     func incrementNav2Source() {
+        guard let ndView = self.view as? NDView else { return }
+        
         switch ( ECU.navaid2Source ) {
         case .adf:
             ECU.navaid2Source = .vor
+            ndView.ADF2Enabled = false
+            ndView.VOR2Enabled = true
         case .off:
             ECU.navaid2Source = .adf
+            ndView.ADF2Enabled = true
+            ndView.VOR2Enabled = false
         case .vor:
             ECU.navaid2Source = .off
+            ndView.ADF2Enabled = false
+            ndView.VOR2Enabled = false
         }
     }
     
     func incrementRange() {
+        guard let ndView = self.view as? NDView else { return }
+        
         switch ( ECU.range ) {
         case .ten:
             ECU.range = .twenty
@@ -94,6 +109,8 @@ class NDViewController: UIViewController {
         case .threeTwenty:
             ECU.range = .ten
         }
+        
+        ndView.range = ECU.range.rawValue
     }
     
     func startBIT(_ completion: @escaping BITCompletion) {
@@ -104,7 +121,6 @@ class NDViewController: UIViewController {
     
     @objc func debugTick() {
         let ndView = self.view as! NDView
-        print("ADF1=\(ndView.ADF1Heading), compass=\(ndView.compassHeading)")
         var newHeading = ndView.ADF1Heading - 1.0
         if newHeading < Angle.min.degrees {
             newHeading += 360.0

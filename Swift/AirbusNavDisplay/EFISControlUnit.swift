@@ -8,18 +8,13 @@
 
 import UIKit
 
-class EFISControlUnit: NSObject {
+@objc final class EFISControlUnit: NSObject {
 
     enum Mode {
         case arc
-        case rose(submode: RoseSubmodes)
-        case plan
-        
-        enum RoseSubmodes {
-            case ils
-            case nav
-            case vor
-        }
+        case roseILS
+        case roseNAV
+        case roseVOR
     }
     
     enum NavaidSource {
@@ -37,13 +32,13 @@ class EFISControlUnit: NSObject {
         case threeTwenty    = 320
     }
     
-    var displayAirports: Bool = false       // ARPT button
-    var displayRoute: Bool = false          // CSTR button
-    var displayWaypoints: Bool = false      // WPT button
-    var displayVORStations: Bool = false    // VOR.D button
-    var displayNDBStations: Bool = false    // NDB button
-    var mode: Mode = .rose(submode: .nav)
-    var navaid1Source: NavaidSource = .off
-    var navaid2Source: NavaidSource = .off
-    var range: Range = .ten
+    dynamic var displayAirports: Bool = false       // ARPT button
+    dynamic var displayRoute: Bool = false          // CSTR button
+    dynamic var displayWaypoints: Bool = false      // WPT button
+    dynamic var displayVORStations: Bool = false    // VOR.D button
+    dynamic var displayNDBStations: Bool = false    // NDB button
+    dynamic var mode: Mode = .roseNAV
+    dynamic var navaid1Source: NavaidSource = .off
+    dynamic var navaid2Source: NavaidSource = .off
+    dynamic var range: Range = .ten
 }
