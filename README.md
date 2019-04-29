@@ -1,9 +1,7 @@
-#AirbusND -- Airbus Navigation Display / Simulator
-
+# AirbusND -- Airbus Navigation Display / Simulator
 This code simulates the output of an Airbus A320 navigation display.
 
-##Introduction
-
+## Introduction
 I originally wrote this code while on vacation in Hawaii. Besides enjoying the sun and the beach I also wanted spend some time working on something related to my hobby, which is flight simulation. In any case, I had some images of an Airbus 320 navigation display. I though it would be cool to hookup X-Plane 9 to an external iPad or Mac controlled display and see a closeup of some of the instrumentation.
 
 The code in the `ObjectiveC` directory is a direct result of those efforts. Originally, the compass-rose displayed text at 30 degree increments around the circumference but Apple has since deprecated the API's I used to make that happen. Here is what the app looks like if you run it in macOS 10.14:
