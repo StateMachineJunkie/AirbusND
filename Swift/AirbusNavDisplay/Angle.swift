@@ -1,6 +1,10 @@
 import UIKit
 
 struct Angle {
+    /// One revolution is 360 degrees
+    static var rev: CGFloat = 360.0
+    static var revInRadians: CGFloat = 2 * .pi
+    
     var degrees : CGFloat
     var radians : CGFloat {
         return degrees * .pi / 180.0

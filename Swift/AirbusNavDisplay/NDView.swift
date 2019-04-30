@@ -25,22 +25,80 @@ typealias BITCompletion = (Bool) -> Void
         case vor
     }
     
-    fileprivate let kRateOfRotation: CGFloat = 20.0
+    private let kRateOfRotation: CGFloat = 20.0
     
-    fileprivate var adf1Layer: ADF1Layer!
-    fileprivate var adf2Layer: ADF2Layer!
-    fileprivate var aircraftDatumLayer: AircraftDatumLayer!
-    fileprivate var autopilotHeadingLayer: AutopilotHeadingLayer!
-    fileprivate var compassLayer: CompassRoseLayer!
-    fileprivate var fixedComponentsLayer: FixedComponentsLayer!
-    fileprivate var navLayer: NavLayer!
-    fileprivate var vor1Layer: VOR1Layer!
-    fileprivate var vor2Layer: VOR2Layer!
+    /// `CALayer` displaying the ADF1 needle.
+    private var adf1Layer: ADF1Layer = {
+        let layer = ADF1Layer()
+        layer.name = "ADF1"
+        layer.isHidden = true
+        return layer
+    }()
     
-    fileprivate var bitCompletion: BITCompletion?
-    fileprivate var bitInProgress = false
+    /// `CALayer` displaying the ADF2 needle.
+    private var adf2Layer: ADF2Layer = {
+        let layer = ADF2Layer()
+        layer.name = "ADF2"
+        layer.isHidden = true
+        return layer
+    }()
     
-    fileprivate var layoutBounds: CGRect = CGRect.zero
+    /// `CALayer` displaying the aircraft datum and heading indicator.
+    private var aircraftDatumLayer: AircraftDatumLayer = {
+        let layer = AircraftDatumLayer()
+        layer.name = "AC Datum"
+        return layer
+    }()
+    
+    /// `CALayer` displaying the autopilot heading bug.
+    private var autopilotHeadingLayer: AutopilotHeadingLayer = {
+        let layer = AutopilotHeadingLayer()
+        layer.name = "AP Heading"
+        return layer
+    }()
+    
+    /// `CALayer` displaying the compass-rose.
+    private var compassLayer: CompassRoseLayer = {
+        let layer = CompassRoseLayer()
+        layer.name = "Compass Rose"
+        return layer
+    }()
+    
+    /// `CALayer` displaying the the fixed (non-moving) components of the ND.
+    private var fixedComponentsLayer: FixedComponentsLayer = {
+        let layer = FixedComponentsLayer()
+        layer.name = "Fixed Components"
+        return layer
+    }()
+    
+    /// `CALayer` displaying the ILS/VOR course and course-deviation needles.
+    private var navLayer: NavLayer = {
+        let layer = NavLayer()
+        layer.name = "Nav"
+        layer.isHidden = true
+        return layer
+    }()
+    
+    /// `CALayer` displaying the VOR1 needle.
+    private var vor1Layer: VOR1Layer = {
+        let layer = VOR1Layer()
+        layer.name = "VOR1"
+        layer.isHidden = true
+        return layer
+    }()
+    
+    /// `CALayer` displaying the VOR2 needle.
+    private var vor2Layer: VOR2Layer = {
+        let layer = VOR2Layer()
+        layer.name = "VOR2"
+        layer.isHidden = true
+        return layer
+    }()
+    
+    private var bitCompletion: BITCompletion?
+    private var bitInProgress = false
+    
+    private var layoutBounds: CGRect = CGRect.zero
     
     // MARK: - Properties
     @IBInspectable var ADF1Enabled: Bool {
@@ -55,8 +113,8 @@ typealias BITCompletion = (Bool) -> Void
     @IBInspectable var ADF1Heading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: adf1Layer.transform).rotationAngle).degrees
-            if heading < 0 {
-                heading += 360.0
+            if heading < Angle.min.degrees {
+                heading += Angle.rev
             }
             return round(heading)
         }
@@ -79,8 +137,8 @@ typealias BITCompletion = (Bool) -> Void
     @IBInspectable var ADF2Heading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: adf2Layer.transform).rotationAngle).degrees
-            if heading < 0 {
-                heading += 360.0
+            if heading < Angle.min.degrees {
+                heading += Angle.rev
             }
             return round(heading)
         }
@@ -94,13 +152,13 @@ typealias BITCompletion = (Bool) -> Void
     @IBInspectable var autopilotHeading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: autopilotHeadingLayer.transform).rotationAngle).degrees
-            if heading < 0 {
-                heading += 360.0
+            if heading < Angle.min.degrees {
+                heading += Angle.rev
             }
             return round(heading)
         }
         set(newHeading) {
-            if  newHeading >= 0 && newHeading <= 360 {
+            if  newHeading >= Angle.min.degrees && newHeading <= Angle.rev {
                 autopilotHeadingLayer.transform = CATransform3DMakeRotation(round(newHeading).radians, 0, 0, 1)
             }
         }
@@ -118,13 +176,13 @@ typealias BITCompletion = (Bool) -> Void
     @IBInspectable var compassHeading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: compassLayer.transform).rotationAngle).degrees
-            if heading < 0 {
-                heading += 360.0
+            if heading < Angle.min.degrees {
+                heading += Angle.rev
             }
             return round(heading)
         }
         set(newHeading) {
-            if newHeading >= 0 && newHeading <= 360 {
+            if newHeading >= Angle.min.degrees && newHeading <= Angle.rev {
                 compassLayer.transform = CATransform3DMakeRotation(round(newHeading).radians, 0, 0, 1)
             }
         }
@@ -133,13 +191,13 @@ typealias BITCompletion = (Bool) -> Void
     @IBInspectable var radioNAVCourse: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: navLayer.transform).rotationAngle).degrees
-            if heading < 0 {
-                heading += 360.0
+            if heading < Angle.min.degrees {
+                heading += Angle.rev
             }
             return round(heading)
         }
         set(newHeading) {
-            if  newHeading >= 0 && newHeading <= 360 {
+            if  newHeading >= Angle.min.degrees && newHeading <= Angle.rev {
                 navLayer.transform = CATransform3DMakeRotation(round(newHeading).radians, 0, 0, 1)
             }
         }
@@ -214,13 +272,13 @@ typealias BITCompletion = (Bool) -> Void
     @IBInspectable var VOR1Heading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: vor1Layer.transform).rotationAngle).degrees
-            if heading < 0 {
-                heading += 360.0
+            if heading < Angle.min.degrees {
+                heading += Angle.rev
             }
             return round(heading)
         }
         set(newHeading) {
-            if  newHeading >= 0 && newHeading <= 360 {
+            if  newHeading >= Angle.min.degrees && newHeading <= Angle.rev {
                 vor1Layer.transform = CATransform3DMakeRotation(round(newHeading).radians, 0, 0, 1)
             }
         }
@@ -238,13 +296,13 @@ typealias BITCompletion = (Bool) -> Void
     @IBInspectable var VOR2Heading: CGFloat {
         get {
             var heading = (CGAffineTransform(fullTransform: vor2Layer.transform).rotationAngle).degrees
-            if heading < 0 {
-                heading += 360.0
+            if heading < Angle.min.degrees {
+                heading += Angle.rev
             }
             return round(heading)
         }
         set(newHeading) {
-            if  newHeading >= 0 && newHeading <= 360 {
+            if  newHeading >= Angle.min.degrees && newHeading <= Angle.rev {
                 vor2Layer.transform = CATransform3DMakeRotation(round(newHeading).radians, 0, 0, 1)
             }
         }
@@ -256,28 +314,6 @@ typealias BITCompletion = (Bool) -> Void
         self.layer.backgroundColor = UIColor.black.cgColor
         self.layer.delegate = self
         
-        // Create component layers
-        adf1Layer = ADF1Layer()
-        adf2Layer = ADF2Layer()
-        aircraftDatumLayer = AircraftDatumLayer()
-        autopilotHeadingLayer = AutopilotHeadingLayer()
-        compassLayer = CompassRoseLayer()
-        fixedComponentsLayer = FixedComponentsLayer()
-        navLayer = NavLayer()
-        vor1Layer = VOR1Layer()
-        vor2Layer = VOR2Layer()
-        
-        // Configure component layers
-        adf1Layer.name = "ADF1"
-        adf2Layer.name = "ADF2"
-        aircraftDatumLayer.name = "AC Datum"
-        autopilotHeadingLayer.name = "AP Heading"
-        compassLayer.name = "Compass Rose"
-        fixedComponentsLayer.name = "Fixed Components"
-        navLayer.name = "Nav"
-        vor1Layer.name = "VOR1"
-        vor2Layer.name = "VOR2"
-
         // The ADf, NAV, and VOR layers should move relative to the compass-rose
         self.compassLayer.sublayers = [
             adf1Layer,
@@ -294,14 +330,6 @@ typealias BITCompletion = (Bool) -> Void
             compassLayer,
             aircraftDatumLayer
         ]
-
-        // Set defaults state of component layers
-        adf1Layer.isHidden = true
-        adf2Layer.isHidden = true
-        autopilotHeadingLayer.isHidden = true
-        navLayer.isHidden = true
-        vor1Layer.isHidden = true
-        vor2Layer.isHidden = true
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -444,7 +472,7 @@ typealias BITCompletion = (Bool) -> Void
     
     // MARK: - Private Methods
     fileprivate func rotationDurationForDegrees(_ degrees: CGFloat, withRate rate: CGFloat) -> CFTimeInterval {
-        if degrees > 0 && rate > 0 {
+        if degrees > Angle.min.degrees && rate > 0 {
             return CFTimeInterval(degrees / rate)
         } else {
             return 0.0

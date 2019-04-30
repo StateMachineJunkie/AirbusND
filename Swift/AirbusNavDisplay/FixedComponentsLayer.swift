@@ -20,9 +20,9 @@ import UIKit
 
 class FixedComponentsLayer: NDLayer {
 
-    let kGlideSlopeDeviationRatio: CGFloat = 0.942857;
+    private let kGlideSlopeDeviationRatio: CGFloat = 0.942857;
     
-    var glideSlopeDeviation: CGFloat = 0 {
+    var glideSlopeDeviation: CGFloat = Angle.min.degrees {
         didSet {
             if glideSlopeDeviation != oldValue {
                 self.setNeedsDisplay()
@@ -54,13 +54,12 @@ class FixedComponentsLayer: NDLayer {
         // Center drawing context
         ctx.translateBy(x: self.bounds.midX, y: self.bounds.midY)
         
-        // Draw solid triangles at 45 degree increments around the compass-rose
-        ctx.setFillColor(UIColor.white.cgColor)
-        
         // We need to orient the drawing context so that 0 degrees is straigh up
         ctx.rotate(by: CGFloat(90.0).radians)
         
         // Draw solid triangles at 45 degree increments around the compass-rose
+        ctx.setFillColor(UIColor.white.cgColor)
+        
         for angle in stride(from: -135.0, to: 180.0, by: 45.0) {
             let point = pointOnCircumferenceWithAngle(CGFloat(angle), radius: self.radius)
             drawTriangleAtPoint(point,
@@ -107,37 +106,41 @@ class FixedComponentsLayer: NDLayer {
             ctx.beginPath()
             ctx.setStrokeColor(UIColor.white.cgColor);
             
-            ctx.move(to: CGPoint(x: gsdOffsetX + gsdMarkRadius, y: self.radius * 0.66))
+            // Draw scale marker 2/3 above glide-slope
+            ctx.move(to: CGPoint(x: gsdOffsetX + gsdMarkRadius, y: self.radius * 0.67))
             ctx.addArc(center: CGPoint(x: gsdOffsetX, y: self.radius * 0.66),
                        radius: gsdMarkRadius,
-                       startAngle: 0.0,
+                       startAngle: CGFloat(0.0),
                        endAngle: CGFloat(360.0).radians,
                        clockwise: false)
             
+            // Draw scale marker 1/3 above glide-slope
             ctx.move(to: CGPoint(x: gsdOffsetX + gsdMarkRadius, y: self.radius * 0.33))
             ctx.addArc(center: CGPoint(x: gsdOffsetX, y: self.radius * 0.33),
                        radius: gsdMarkRadius,
-                       startAngle: 0.0,
+                       startAngle: CGFloat(0.0),
                        endAngle: CGFloat(360.0).radians,
                        clockwise: false)
             
+            // Draw scale marker 1/3 below glide-slope
             ctx.move(to: CGPoint(x: gsdOffsetX + gsdMarkRadius, y: self.radius * -0.33))
             ctx.addArc(center: CGPoint(x: gsdOffsetX, y: self.radius * -0.33),
                        radius: gsdMarkRadius,
-                       startAngle: 0.0,
+                       startAngle: CGFloat(0.0),
                        endAngle: CGFloat(360.0).radians,
                        clockwise: false)
             
-            ctx.move(to: CGPoint(x: gsdOffsetX + gsdMarkRadius, y: self.radius * -0.66))
+            // Draw scale marker 2/3 below glide-slope
+            ctx.move(to: CGPoint(x: gsdOffsetX + gsdMarkRadius, y: self.radius * -0.67))
             ctx.addArc(center: CGPoint(x: gsdOffsetX, y: self.radius * -0.66),
                        radius: gsdMarkRadius,
-                       startAngle: 0.0,
+                       startAngle: CGFloat(0.0),
                        endAngle: CGFloat(360.0).radians,
                        clockwise: false)
             
             ctx.drawPath(using: .stroke)
             
-            // Draw center glide path marker
+            // Draw center glide-slope marker
             ctx.beginPath()
             ctx.setStrokeColor(UIColor.yellow.cgColor)
             ctx.setLineWidth(2.0)
@@ -147,7 +150,7 @@ class FixedComponentsLayer: NDLayer {
             
             ctx.drawPath(using: .stroke)
             
-            // Draw glide path deviation rhombus / carret (half rhombus)
+            // Draw glide-slope deviation rhombus / carret (half rhombus)
             ctx.setStrokeColor(UIColor.magenta.cgColor)
             
             var gsdOffsetY: CGFloat = 0;

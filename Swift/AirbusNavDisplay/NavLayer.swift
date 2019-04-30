@@ -22,16 +22,15 @@ import UIKit
 
 class NavLayer: NDLayer {
 
-    fileprivate let kFirstSegmentPointMultiplier: CGFloat = 0.667
-    fileprivate let kLateralDeviationRatio: CGFloat = 0.05
-    fileprivate let kLocalizerDeviationRatio: CGFloat = 0.2
-    fileprivate let kMaxILSCourseDeviation: CGFloat = 2.5
-    fileprivate let kMaxVORCourseDeviation: CGFloat = 10.0
-    fileprivate let kMinILSCourseDeviation: CGFloat = -2.5
-    fileprivate let kMinVORCourseDeviation: CGFloat = -10.0
-    fileprivate let kSecondSegmentPointMultiplier: CGFloat = 0.417
+    private let kFirstSegmentPointMultiplier: CGFloat = 0.667
+    private let kLateralDeviationRatio: CGFloat = 0.05
+    private let kLocalizerDeviationRatio: CGFloat = 0.2
+    private let kSecondSegmentPointMultiplier: CGFloat = 0.417
     
-    var courseDeviation: CGFloat = 0 {
+    private let vorCourseDeviationRange: ClosedRange<CGFloat> = -10.0...10.0
+    private let ilsCourseDeviationRange: ClosedRange<CGFloat> = -2.5...2.5
+    
+    var courseDeviation: CGFloat = Angle.min.degrees {
         didSet {
             if courseDeviation != oldValue {
                 self.setNeedsDisplay()
@@ -97,17 +96,17 @@ class NavLayer: NDLayer {
         var courseDeviation = self.courseDeviation
         
         if drawILS { // draw ILS
-            if courseDeviation > kMaxILSCourseDeviation {
-                courseDeviation = kMaxILSCourseDeviation
-            } else if courseDeviation < kMinILSCourseDeviation {
-                courseDeviation = kMinILSCourseDeviation
+            if courseDeviation > ilsCourseDeviationRange.upperBound {
+                courseDeviation = ilsCourseDeviationRange.upperBound
+            } else if courseDeviation < ilsCourseDeviationRange.lowerBound {
+                courseDeviation = ilsCourseDeviationRange.lowerBound
             }
             deviationOffsetY = self.radius * courseDeviation * kLocalizerDeviationRatio;
         } else {    // draw VOR
-            if courseDeviation > kMaxVORCourseDeviation {
-                courseDeviation = kMaxVORCourseDeviation
-            } else if courseDeviation < kMinVORCourseDeviation {
-                courseDeviation = kMinVORCourseDeviation
+            if courseDeviation > vorCourseDeviationRange.upperBound {
+                courseDeviation = vorCourseDeviationRange.upperBound
+            } else if courseDeviation < vorCourseDeviationRange.lowerBound {
+                courseDeviation = vorCourseDeviationRange.lowerBound
             }
             deviationOffsetY = self.radius * courseDeviation * kLateralDeviationRatio
             

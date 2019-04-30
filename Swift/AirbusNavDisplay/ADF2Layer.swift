@@ -12,8 +12,8 @@ import UIKit
 
 class ADF2Layer: NDLayer {
 
-    let kFirstSegmentPointMultiplier: CGFloat = 0.677
-    let kSecondSegmentPointMultiplier: CGFloat = 0.584
+    private let kFirstSegmentPointMultiplier: CGFloat = 0.677
+    private let kSecondSegmentPointMultiplier: CGFloat = 0.584
     
     // MARK: - Initializer
     override init() {

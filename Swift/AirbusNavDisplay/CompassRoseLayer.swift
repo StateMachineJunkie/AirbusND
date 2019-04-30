@@ -12,7 +12,7 @@ import UIKit
 
 class CompassRoseLayer: NDLayer {
 
-    let kFiveDegreeTickLengthMultiplier: CGFloat = 1.03
+    private let kFiveDegreeTickLengthMultiplier: CGFloat = 1.03
     
     // MARK: - Initializer
     override init() {
@@ -43,23 +43,23 @@ class CompassRoseLayer: NDLayer {
             kCTForegroundColorFromContextAttributeName as NSAttributedString.Key: true as AnyObject
         ]
         
-        // Center and rotate the drawing context so that 0,0 is at the center and
-        // zero degrees is at the top of the context.
+        // Center and rotate the drawing context so that the origin point of 0,0
+        // is at the center and zero degrees is at the top of the context.
         ctx.translateBy(x: self.bounds.midX, y: self.bounds.midY)
         ctx.rotate(by: CGFloat(-90.0.radians))
 
         // draw initial circle
         ctx.beginPath()
-        let maxDrawAngle = Angle.maxDegrees + 1.0
+        let maxDrawAngle = Angle.rev
 		ctx.addArc(center: CGPoint(x: 0, y: 0), radius: self.radius, startAngle: Angle.min.radians, endAngle: maxDrawAngle.radians, clockwise: false)
         
         // draw ticks around circle at five degree increments
 		for angle in stride(from: Angle.min.degrees, to: Angle.max.degrees, by: 5.0) {
             var point = pointOnCircumferenceWithAngle(angle, radius: self.radius)
             ctx.move(to: CGPoint(x: point.x, y: point.y))
-            
+
+            // draw 10 degree tick slightly longer
             if Int(angle).isMultiple(of: 2) {
-                // draw ten degree tick
                 point = pointOnCircumferenceWithAngle(angle, radius: self.radius * 1.06)
                 
                 // draw tick value at 30 degree increments
@@ -93,9 +93,7 @@ class CompassRoseLayer: NDLayer {
                     
                     ctx.restoreGState()
                 }
-            }
-            else
-            {
+            } else {
                 // draw five degree tick
                 point = pointOnCircumferenceWithAngle(angle, radius: self.radius * kFiveDegreeTickLengthMultiplier)
             }

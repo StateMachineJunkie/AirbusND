@@ -12,7 +12,7 @@ import UIKit
 
 class AutopilotHeadingLayer: NDLayer {
 
-    let kAutopilotBugHeightMultiplier: CGFloat = 0.115
+    private let kAutopilotBugHeightMultiplier: CGFloat = 0.115
     
     // MARK: - Initializer
     override init() {
