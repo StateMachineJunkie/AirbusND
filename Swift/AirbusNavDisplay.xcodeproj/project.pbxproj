@@ -21,13 +21,16 @@
 		5C552F271C1BE3DC00FAE1FC /* NDLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B60F51C09761D003D43A0 /* NDLayer.swift */; };
 		5C552F291C1BE61500FAE1FC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C552F281C1BE61500FAE1FC /* RootViewController.swift */; };
 		5C552F2B1C1BE8D000FAE1FC /* NDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C552F2A1C1BE8D000FAE1FC /* NDViewController.swift */; };
-		5CC9DB4E1E10AABF00CEC696 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9DB4D1E10AABF00CEC696 /* Angle.swift */; };
 		5CE188EF1C2C9489003A9272 /* CGAffineTransformExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE188EE1C2C9489003A9272 /* CGAffineTransformExtension.swift */; };
+		5CE6F686228918C900F0E51A /* UDPListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE6F685228918C900F0E51A /* UDPListener.swift */; };
+		5CE6F688228A167400F0E51A /* XPlaneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE6F687228A167400F0E51A /* XPlaneService.swift */; };
 		5CFCD0FB1C1FD4E60023C656 /* VOR1Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCD0F91C1FD4E60023C656 /* VOR1Layer.swift */; };
 		5CFCD0FC1C1FD4E60023C656 /* VOR2Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCD0FA1C1FD4E60023C656 /* VOR2Layer.swift */; };
 		5CFCD0FE1C2271E60023C656 /* FixedComponentsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCD0FD1C2271E60023C656 /* FixedComponentsLayer.swift */; };
 		5CFCD1001C2675760023C656 /* NavLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCD0FF1C2675760023C656 /* NavLayer.swift */; };
 		5CFCD1021C27745D0023C656 /* AircraftDatumLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCD1011C27745D0023C656 /* AircraftDatumLayer.swift */; };
+		5CFF1790229DED05008E428E /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9DB4D1E10AABF00CEC696 /* Angle.swift */; };
+		5CFF1792229DF062008E428E /* CGContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF1791229DF062008E428E /* CGContextExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,15 +49,17 @@
 		5C3BC6041C2A5FF700D107D7 /* EFISControlUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFISControlUnit.swift; sourceTree = "<group>"; };
 		5C552F281C1BE61500FAE1FC /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		5C552F2A1C1BE8D000FAE1FC /* NDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDViewController.swift; sourceTree = "<group>"; };
-		5C84F7051C2E1C15006131B6 /* UDPCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPCode.m; sourceTree = "<group>"; };
 		5C88CBBE1C2CACFC0025B8F8 /* AirbusNavDisplay-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AirbusNavDisplay-Bridging-Header.h"; sourceTree = "<group>"; };
 		5CC9DB4D1E10AABF00CEC696 /* Angle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
 		5CE188EE1C2C9489003A9272 /* CGAffineTransformExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGAffineTransformExtension.swift; sourceTree = "<group>"; };
+		5CE6F685228918C900F0E51A /* UDPListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPListener.swift; sourceTree = "<group>"; };
+		5CE6F687228A167400F0E51A /* XPlaneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPlaneService.swift; sourceTree = "<group>"; };
 		5CFCD0F91C1FD4E60023C656 /* VOR1Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOR1Layer.swift; sourceTree = "<group>"; };
 		5CFCD0FA1C1FD4E60023C656 /* VOR2Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOR2Layer.swift; sourceTree = "<group>"; };
 		5CFCD0FD1C2271E60023C656 /* FixedComponentsLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedComponentsLayer.swift; sourceTree = "<group>"; };
 		5CFCD0FF1C2675760023C656 /* NavLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavLayer.swift; sourceTree = "<group>"; };
 		5CFCD1011C27745D0023C656 /* AircraftDatumLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AircraftDatumLayer.swift; sourceTree = "<group>"; };
+		5CFF1791229DF062008E428E /* CGContextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGContextExtension.swift; sourceTree = "<group>"; };
 		BE0AE258E977892FCEE12290 /* Pods_AirbusNavDisplay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbusNavDisplay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF59202656607443136C36CB /* Pods-AirbusNavDisplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbusNavDisplay.debug.xcconfig"; path = "Target Support Files/Pods-AirbusNavDisplay/Pods-AirbusNavDisplay.debug.xcconfig"; sourceTree = "<group>"; };
 		D9E030D1039585FEB296AFD4 /* Pods-AirbusNavDisplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbusNavDisplay.release.xcconfig"; path = "Target Support Files/Pods-AirbusNavDisplay/Pods-AirbusNavDisplay.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +83,6 @@
 				BF59202656607443136C36CB /* Pods-AirbusNavDisplay.debug.xcconfig */,
 				D9E030D1039585FEB296AFD4 /* Pods-AirbusNavDisplay.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				5CE188EE1C2C9489003A9272 /* CGAffineTransformExtension.swift */,
+				5CFF1791229DF062008E428E /* CGContextExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -165,7 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				5CC9DB4D1E10AABF00CEC696 /* Angle.swift */,
-				5C84F7051C2E1C15006131B6 /* UDPCode.m */,
+				5CE6F685228918C900F0E51A /* UDPListener.swift */,
+				5CE6F687228A167400F0E51A /* XPlaneService.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -278,10 +284,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AirbusNavDisplay/Pods-AirbusNavDisplay-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DataDecoder/DataDecoder.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer-21/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DataDecoder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,14 +313,17 @@
 				5C30C4921C1E707000D9A8F7 /* ADF1Layer.swift in Sources */,
 				5C30C4951C1E718100D9A8F7 /* ADF2Layer.swift in Sources */,
 				5CFCD0FC1C1FD4E60023C656 /* VOR2Layer.swift in Sources */,
+				5CE6F688228A167400F0E51A /* XPlaneService.swift in Sources */,
 				5C30C4931C1E707000D9A8F7 /* AutopilotHeadingLayer.swift in Sources */,
 				5CFCD0FE1C2271E60023C656 /* FixedComponentsLayer.swift in Sources */,
 				5C2B60E21C07DDAA003D43A0 /* AppDelegate.swift in Sources */,
-				5CC9DB4E1E10AABF00CEC696 /* Angle.swift in Sources */,
 				5C552F2B1C1BE8D000FAE1FC /* NDViewController.swift in Sources */,
 				5C2B60F41C07DF9D003D43A0 /* NDView.swift in Sources */,
+				5CE6F686228918C900F0E51A /* UDPListener.swift in Sources */,
+				5CFF1790229DED05008E428E /* Angle.swift in Sources */,
 				5CE188EF1C2C9489003A9272 /* CGAffineTransformExtension.swift in Sources */,
 				5CFCD1001C2675760023C656 /* NavLayer.swift in Sources */,
+				5CFF1792229DF062008E428E /* CGContextExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

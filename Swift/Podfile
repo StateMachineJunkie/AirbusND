@@ -3,6 +3,7 @@ platform :ios,  '12.0'
 use_frameworks!
 
 target 'AirbusNavDisplay' do
+pod 'DataDecoder'
 
 # debug only pods
 pod 'Reveal-SDK', :configurations => ['Debug']

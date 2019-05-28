@@ -1,16 +1,20 @@
 PODS:
+  - DataDecoder (5.0.0)
   - Reveal-SDK (21)
 
 DEPENDENCIES:
+  - DataDecoder
   - Reveal-SDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - DataDecoder
     - Reveal-SDK
 
 SPEC CHECKSUMS:
+  DataDecoder: 450bbf3a850ba113fc04f28de4f43c227e2f8b00
   Reveal-SDK: 3523e0eb7c562811c51bb71da6e523a6373702c8
 
-PODFILE CHECKSUM: d56c5c3eef5b09b07d1cab0497b1d3a4d7f6fa16
+PODFILE CHECKSUM: e16c8f78899236c311805db0949fdcfb0358dd56
 
 COCOAPODS: 1.6.1

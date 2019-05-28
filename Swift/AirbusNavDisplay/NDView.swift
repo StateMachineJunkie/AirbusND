@@ -120,7 +120,7 @@ typealias BITCompletion = (Bool) -> Void
         }
         set(newHeading) {
             if  newHeading >= Angle.min.degrees && newHeading <= Angle.max.degrees {
-                adf1Layer.transform = CATransform3DMakeRotation(round(newHeading).radians, 0, 0, 1);
+                adf1Layer.transform = CATransform3DMakeRotation(round(newHeading).radians, 0, 0, 1)
             }
         }
     }
@@ -242,10 +242,10 @@ typealias BITCompletion = (Bool) -> Void
                 
                 if .ils == newValue {
                     navLayer.drawILS = true
-                    fixedComponentsLayer.glideSlopeEnabled = true;
+                    fixedComponentsLayer.glideSlopeEnabled = true
                 } else {
                     navLayer.drawILS = false
-                    fixedComponentsLayer.glideSlopeEnabled = false;
+                    fixedComponentsLayer.glideSlopeEnabled = false
                 }
             }
         }
@@ -400,7 +400,7 @@ typealias BITCompletion = (Bool) -> Void
         compassRoseAnimation.repeatDuration = 30.0
         compassRoseAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         compassRoseAnimation.toValue        = NSNumber(value: (45.0).radians as Double)
-        compassRoseAnimation.delegate       = self;
+        compassRoseAnimation.delegate       = self
         compassLayer.add(compassRoseAnimation, forKey: "rotateAnimation")
         
         // animate the ADF1 needle
@@ -409,7 +409,7 @@ typealias BITCompletion = (Bool) -> Void
         adf1Animation.duration          = rotationDurationForDegrees(320.0, withRate: kRateOfRotation)
         adf1Animation.fromValue         = NSNumber(value: 0.0 as Double)
         adf1Animation.keyPath           = "transform.rotation.z"
-        adf1Animation.repeatDuration    = 30.0;
+        adf1Animation.repeatDuration    = 30.0
         adf1Animation.timingFunction    = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         adf1Animation.toValue           = NSNumber(value: (-320).radians as Double)
         adf1Layer.add(adf1Animation, forKey:"rotateAnimation")
@@ -420,7 +420,7 @@ typealias BITCompletion = (Bool) -> Void
         adf2Animation.duration          = rotationDurationForDegrees(270.0, withRate: kRateOfRotation)
         adf2Animation.fromValue         = NSNumber(value: 0.0 as Double)
         adf2Animation.keyPath           = "transform.rotation.z"
-        adf2Animation.repeatDuration    = 30.0;
+        adf2Animation.repeatDuration    = 30.0
         adf2Animation.timingFunction    = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         adf2Animation.toValue           = NSNumber(value: (270).radians as Double)
         adf2Layer.add(adf2Animation, forKey:"rotateAnimation")
@@ -431,7 +431,7 @@ typealias BITCompletion = (Bool) -> Void
         headingAnimation.duration       = rotationDurationForDegrees(98.0, withRate: kRateOfRotation)
         headingAnimation.fromValue      = NSNumber(value: 0.0 as Double)
         headingAnimation.keyPath        = "transform.rotation.z"
-        headingAnimation.repeatDuration = 30.0;
+        headingAnimation.repeatDuration = 30.0
         headingAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         headingAnimation.toValue        = NSNumber(value: (-98).radians as Double)
         autopilotHeadingLayer.add(headingAnimation, forKey:"rotateAnimation")
@@ -442,7 +442,7 @@ typealias BITCompletion = (Bool) -> Void
         vor1Animation.duration          = rotationDurationForDegrees(180.0, withRate: kRateOfRotation)
         vor1Animation.fromValue         = NSNumber(value: 0.0 as Double)
         vor1Animation.keyPath           = "transform.rotation.z"
-        vor1Animation.repeatDuration    = 30.0;
+        vor1Animation.repeatDuration    = 30.0
         vor1Animation.timingFunction    = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         vor1Animation.toValue           = NSNumber(value: (-180).radians as Double)
         vor1Layer.add(vor1Animation, forKey:"rotateAnimation")
@@ -453,7 +453,7 @@ typealias BITCompletion = (Bool) -> Void
         vor2Animation.duration          = rotationDurationForDegrees(180.0, withRate: kRateOfRotation)
         vor2Animation.fromValue         = NSNumber(value: 0.0 as Double)
         vor2Animation.keyPath           = "transform.rotation.z"
-        vor2Animation.repeatDuration    = 30.0;
+        vor2Animation.repeatDuration    = 30.0
         vor2Animation.timingFunction    = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         vor2Animation.toValue           = NSNumber(value: (180).radians as Double)
         vor2Layer.add(vor2Animation, forKey:"rotateAnimation")
