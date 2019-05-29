@@ -30,23 +30,23 @@ public extension CGFloat {
     // eighty (180).
     
     var rotationAngle: CGFloat {
-        assert(self >= 0.0, "Heading values should always be positive!")
+        assert(self >= Angle.minDegrees, "Heading values should always be positive!")
         
-        if self != 0.0 && self > 180 {
-            return -(360.0 - self)
+        if self != Angle.minDegrees && self > 180 {
+            return -(Angle.rev - self)
         } else {
             return self
         }
     }
     
     var inverseRotationAngle: CGFloat {
-        assert(self >= 0.0, "Heading values should always be positive!")
+        assert(self >= Angle.minDegrees, "Heading values should always be positive!")
         
-        if self != 0.0 {
+        if self != Angle.minDegrees {
             if self <= 180 {
                 return -self
             } else {
-                return 360 - self
+                return Angle.rev - self
             }
         } else {
             return self

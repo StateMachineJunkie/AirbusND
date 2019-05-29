@@ -108,32 +108,32 @@ class FixedComponentsLayer: NDLayer {
                 ctx.move(to: CGPoint(x: gsdOffsetX + gsdMarkRadius, y: self.radius * 0.67))
                 ctx.addArc(center: CGPoint(x: gsdOffsetX, y: self.radius * 0.66),
                            radius: gsdMarkRadius,
-                           startAngle: CGFloat(0.0),
-                           endAngle: CGFloat(360.0).radians,
+                           startAngle: Angle.minRadians,
+                           endAngle: Angle.rev.radians,
                            clockwise: false)
                 
                 // Draw scale marker 1/3 above glide-slope
                 ctx.move(to: CGPoint(x: gsdOffsetX + gsdMarkRadius, y: self.radius * 0.33))
                 ctx.addArc(center: CGPoint(x: gsdOffsetX, y: self.radius * 0.33),
                            radius: gsdMarkRadius,
-                           startAngle: CGFloat(0.0),
-                           endAngle: CGFloat(360.0).radians,
+                           startAngle: Angle.minRadians,
+                           endAngle: Angle.rev.radians,
                            clockwise: false)
                 
                 // Draw scale marker 1/3 below glide-slope
                 ctx.move(to: CGPoint(x: gsdOffsetX + gsdMarkRadius, y: self.radius * -0.33))
                 ctx.addArc(center: CGPoint(x: gsdOffsetX, y: self.radius * -0.33),
                            radius: gsdMarkRadius,
-                           startAngle: CGFloat(0.0),
-                           endAngle: CGFloat(360.0).radians,
+                           startAngle: Angle.minRadians,
+                           endAngle: Angle.rev.radians,
                            clockwise: false)
                 
                 // Draw scale marker 2/3 below glide-slope
                 ctx.move(to: CGPoint(x: gsdOffsetX + gsdMarkRadius, y: self.radius * -0.67))
                 ctx.addArc(center: CGPoint(x: gsdOffsetX, y: self.radius * -0.66),
                            radius: gsdMarkRadius,
-                           startAngle: CGFloat(0.0),
-                           endAngle: CGFloat(360.0).radians,
+                           startAngle: Angle.minRadians,
+                           endAngle: Angle.rev.radians,
                            clockwise: false)
                 
                 ctx.drawPath(using: .stroke)

@@ -143,7 +143,7 @@ typealias BITCompletion = (Bool) -> Void
             return round(heading)
         }
         set(newHeading) {
-            if  newHeading >= 0 && newHeading <= 360 {
+            if  newHeading >= Angle.minDegrees && newHeading <= Angle.rev {
                 adf2Layer.transform = CATransform3DMakeRotation(round(newHeading).radians, 0, 0, 1)
             }
         }
@@ -471,9 +471,9 @@ typealias BITCompletion = (Bool) -> Void
     }
     
     // MARK: - Private Methods
-    fileprivate func rotationDurationForDegrees(_ degrees: CGFloat, withRate rate: CGFloat) -> CFTimeInterval {
+    fileprivate func rotationDurationForDegrees(_ degrees: CGFloat, withRate rate: CGFloat) -> TimeInterval {
         if degrees > Angle.min.degrees && rate > 0 {
-            return CFTimeInterval(degrees / rate)
+            return TimeInterval(degrees / rate)
         } else {
             return 0.0
         }

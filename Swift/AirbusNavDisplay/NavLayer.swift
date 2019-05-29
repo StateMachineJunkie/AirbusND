@@ -131,29 +131,29 @@ class NavLayer: NDLayer {
             ctx.move(to: CGPoint(x: tinyRadius, y: halfRadius))
             ctx.addArc(center: CGPoint(x: 0.0, y: halfRadius),
                        radius: tinyRadius,
-                       startAngle: 0.0,
-                       endAngle: CGFloat(360.0).radians,
+                       startAngle: Angle.minRadians,
+                       endAngle: Angle.rev.radians,
                        clockwise: false)
             
             ctx.move(to: CGPoint(x: tinyRadius, y: quarterRadius))
             ctx.addArc(center: CGPoint(x: 0.0, y: quarterRadius),
                        radius: tinyRadius,
-                       startAngle: 0.0,
-                       endAngle: CGFloat(360).radians,
+                       startAngle: Angle.minRadians,
+                       endAngle: Angle.rev.radians,
                        clockwise: false)
             
             ctx.move(to: CGPoint(x: tinyRadius, y: -halfRadius))
             ctx.addArc(center: CGPoint(x: 0.0, y: -halfRadius),
                        radius: tinyRadius,
-                       startAngle: 0.0,
-                       endAngle: CGFloat(360.0),
+                       startAngle: Angle.minRadians,
+                       endAngle: Angle.rev.radians,
                        clockwise: false)
             
             ctx.move(to: CGPoint(x: tinyRadius, y: -quarterRadius))
             ctx.addArc(center: CGPoint(x: 0.0, y: -quarterRadius),
                        radius: tinyRadius,
-                       startAngle: 0.0,
-                       endAngle: CGFloat(360.0).radians,
+                       startAngle: Angle.minRadians,
+                       endAngle: Angle.rev.radians,
                        clockwise: (false))
             
             ctx.drawPath(using: .stroke)
