@@ -471,7 +471,7 @@ typealias BITCompletion = (Bool) -> Void
     }
     
     // MARK: - Private Methods
-    fileprivate func rotationDurationForDegrees(_ degrees: CGFloat, withRate rate: CGFloat) -> TimeInterval {
+    private func rotationDurationForDegrees(_ degrees: CGFloat, withRate rate: CGFloat) -> TimeInterval {
         if degrees > Angle.min.degrees && rate > 0 {
             return TimeInterval(degrees / rate)
         } else {
