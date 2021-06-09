@@ -49,7 +49,7 @@ class RootViewController: UIViewController {
             nav1Button.isEnabled = false
             nav2Button.isEnabled = false
             rangeButton.isEnabled = false
-            startBITButton.isEnabled = false;
+            startBITButton.isEnabled = false
             navDisplay.startBIT() { (finished: Bool) in
                 self.modeButton.isEnabled = true
                 self.nav1Button.isEnabled = true

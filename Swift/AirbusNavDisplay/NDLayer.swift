@@ -30,23 +30,23 @@ public extension CGFloat {
     // eighty (180).
     
     var rotationAngle: CGFloat {
-        assert(self >= 0.0, "Heading values should always be positive!")
+        assert(self >= Angle.minDegrees, "Heading values should always be positive!")
         
-        if self != 0.0 && self > 180 {
-            return -(360.0 - self)
+        if self != Angle.minDegrees && self > 180 {
+            return -(Angle.rev - self)
         } else {
             return self
         }
     }
     
     var inverseRotationAngle: CGFloat {
-        assert(self >= 0.0, "Heading values should always be positive!")
+        assert(self >= Angle.minDegrees, "Heading values should always be positive!")
         
-        if self != 0.0 {
+        if self != Angle.minDegrees {
             if self <= 180 {
                 return -self
             } else {
-                return 360 - self
+                return Angle.rev - self
             }
         } else {
             return self
@@ -66,7 +66,7 @@ class NDLayer: CALayer {
 
     // MARK: - Properties
     var circumference: CGFloat {
-        return .pi * self.diameter;
+        return .pi * self.diameter
     }
     
     var diameter: CGFloat {
@@ -99,65 +99,52 @@ class NDLayer: CALayer {
     
     // MARK: - Shared Drawing Methods
     func drawCarretAtPoint(_ point: CGPoint, inContext ctx: CGContext, withRadius radius: CGFloat, andUpOrientation up: Bool ) {
-        // Caller should set any drawing properties including line-width, fill-color,
-        // stroke-color.  This method makes no permanent changes to the given context.
-        ctx.saveGState()
-        
-        // Translate the drawing context for this drawing procedure
-        ctx.translateBy(x: point.x, y: point.y)
-        
-        // Create a path to draw carret on imaginary circumference based on given radius and point
-        ctx.beginPath()
-        ctx.move(to: CGPoint(x: 0.0, y: 0.0))
-        let vertexPoint = pointOnCircumferenceWithAngle((up ? 30.0 : -30.0), radius: radius)
-        ctx.addLine(to: CGPoint(x: vertexPoint.x, y: vertexPoint.y))
-        ctx.addLine(to: CGPoint(x: vertexPoint.x * 2.0, y: 0.0))
-        ctx.drawPath(using: .stroke)
-
-        ctx.restoreGState()
+        ctx.withLocalGState {
+            // Translate the drawing context for this drawing procedure
+            ctx.translateBy(x: point.x, y: point.y)
+            
+            // Create a path to draw carret on imaginary circumference based on given radius and point
+            ctx.beginPath()
+            ctx.move(to: CGPoint(x: 0.0, y: 0.0))
+            let vertexPoint = pointOnCircumferenceWithAngle((up ? 30.0 : -30.0), radius: radius)
+            ctx.addLine(to: CGPoint(x: vertexPoint.x, y: vertexPoint.y))
+            ctx.addLine(to: CGPoint(x: vertexPoint.x * 2.0, y: 0.0))
+            ctx.drawPath(using: .stroke)
+        }
     }
     
     func drawRhombusAtPoint(_ point: CGPoint, inContext ctx: CGContext, withAngle angle: CGFloat, andRadius radius: CGFloat, usingDrawingMode mode: CGPathDrawingMode) {
-        // Caller should set any drawing properties including line-width, fill-color,
-        // stroke-color.  This method makes no permanent changes to the given context.
-        ctx.saveGState()
-        
-        // Translate and rotate the drawing context for this drawing procedure
-        ctx.translateBy(x: point.x, y: point.y)
-        ctx.rotate(by: angle.radians)
-        
-        // Create path for rhombus on imaginary circumference based on given radius and point
-        ctx.beginPath()
-        ctx.move(to: CGPoint(x: 0.0, y: 0.0))
-        let vertexPoint = pointOnCircumferenceWithAngle(30, radius: radius)
-        ctx.addLine(to: CGPoint(x: vertexPoint.x, y: vertexPoint.y))
-        ctx.addLine(to: CGPoint(x: vertexPoint.x * 2.0, y: 0.0))
-        ctx.addLine(to: CGPoint(x: vertexPoint.x, y: -vertexPoint.y))
-        ctx.closePath()
-        ctx.drawPath(using: mode)
-        
-        ctx.restoreGState()
+        ctx.withLocalGState {
+            // Translate and rotate the drawing context for this drawing procedure
+            ctx.translateBy(x: point.x, y: point.y)
+            ctx.rotate(by: angle.radians)
+            
+            // Create path for rhombus on imaginary circumference based on given radius and point
+            ctx.beginPath()
+            ctx.move(to: CGPoint(x: 0.0, y: 0.0))
+            let vertexPoint = pointOnCircumferenceWithAngle(30, radius: radius)
+            ctx.addLine(to: CGPoint(x: vertexPoint.x, y: vertexPoint.y))
+            ctx.addLine(to: CGPoint(x: vertexPoint.x * 2.0, y: 0.0))
+            ctx.addLine(to: CGPoint(x: vertexPoint.x, y: -vertexPoint.y))
+            ctx.closePath()
+            ctx.drawPath(using: mode)
+        }
     }
     
     func drawTriangleAtPoint(_ point: CGPoint, inContext ctx: CGContext, withAngle angle: CGFloat, andRadius radius: CGFloat, usingDrawingMode mode: CGPathDrawingMode) {
-        // Caller should set any drawing properties including line-width, fill-color,
-        // stroke-color.  This method makes no permanent changes to the given context.
-        // All triangles drawn by this routine are assumed to be equilateral.
-        ctx.saveGState();
-        
-        // Translate and rotate the drawing context for this drawing procedure
-        ctx.translateBy(x: point.x, y: point.y);
-        ctx.rotate(by: angle.radians);
-        
-        // Create path for triangle on imaginary circumference based on given radius and point
-        ctx.beginPath();
-        ctx.move(to: CGPoint(x: 0.0, y: 0.0));
-        let vertexPoint = pointOnCircumferenceWithAngle(30, radius: radius);
-        ctx.addLine(to: CGPoint(x: vertexPoint.x, y: vertexPoint.y));
-        ctx.addLine(to: CGPoint(x: vertexPoint.x, y: -vertexPoint.y));
-        ctx.closePath();
-        ctx.drawPath(using: mode);
-        
-        ctx.restoreGState();
+        ctx.withLocalGState {
+            // Translate and rotate the drawing context for this drawing procedure
+            ctx.translateBy(x: point.x, y: point.y)
+            ctx.rotate(by: angle.radians)
+            
+            // Create path for triangle on imaginary circumference based on given radius and point
+            ctx.beginPath()
+            ctx.move(to: CGPoint(x: 0.0, y: 0.0))
+            let vertexPoint = pointOnCircumferenceWithAngle(30, radius: radius)
+            ctx.addLine(to: CGPoint(x: vertexPoint.x, y: vertexPoint.y))
+            ctx.addLine(to: CGPoint(x: vertexPoint.x, y: -vertexPoint.y))
+            ctx.closePath()
+            ctx.drawPath(using: mode)
+        }
     }
 }
